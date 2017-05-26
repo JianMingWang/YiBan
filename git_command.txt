@@ -1,0 +1,65 @@
+创建版本库：
+	$ git mkdir learngit
+	$ cd learngit
+	$ pwd 
+	
+	以上三行命令，会在电脑中固定的文件路径下创建git仓库，文件名为learngit
+	
+	$ git init
+	//初始化git仓库
+	
+	假设在learngit下面加一个readme.txt文件，里面写入内容
+	Git is a version control system.
+	Git is free software.
+	
+	$ git add readme.txt
+	$ git commit -m"这里面写更新的内容备注" 
+	
+	add命令用于添加文件，commit命令用于提交文件   -m"" 用于备注内容提示，必须要写，commit命令前可以有多个add命令，一次可以提交多种修改
+	
+	$ git status
+	status命令用于查看git库的状态
+	
+	$ git diff readme.txt
+	diff命令用于参看修改内容（库中文件和本地文件做对比）diff 后面需指定完整的文件名
+
+穿梭于版本之间：
+	$ git log
+	$ git log --pretty=oneline
+	以上两条命令可用于查看版本更新日志，第一条命令是分行显示内容，第二条内容是单行显示内容
+	
+	$ git reset --hard commit_id
+	使用reset命令即可回退版本，commit_id是每次版本修改的ID，输入前几位即可，建议为输入前七位
+	
+	$ git reset --hard^   //回退一个版本
+	$ git reset --hard^^ //回退两个版本
+	$ git reflog 查看命令历史，以确定回到过去或未来的哪个版本
+	
+	$ cat readme.txt //输出readme.txt中的内容
+	
+	$ git checkout -- filename 
+	此命令用于丢弃工作区的修改，filename表示文件名，注意 -- 和文件名之间有空格
+	
+	$ git reset HEAD filename
+	此命令用于回退暂存区的版本
+	
+	回退工作区内容时，丢弃工作区的修改：checkout -- filename
+	回退暂存区内容时，丢弃暂存区的修改：
+	reset HEAD filename
+	
+	$ git remote add origin git@github.com:JianMingWang/learngit.git
+	Git remote 指令将本地库与远程库关联
+	
+	$ git push -u origin master
+	将本地库推至远程库  -u参数用于将本地库master分支与远程库master分支相关联，关联后在此推送可省略此参数
+	
+分支管理
+	$ git branch dev
+	$ git checkout dev
+	以上两条命令，创建了dev分支，并且当前操作指向dev分支，也可将以上两条命令合并
+	$ git checkout -b dev
+	
+	$ git branch //查看分支情况
+	$ git checkout dev  //切换分支
+	$ git merge <name>  //合并分支（必须在master分支上合并其他分支）
+	$ git branch -d <name>  //删除分支
