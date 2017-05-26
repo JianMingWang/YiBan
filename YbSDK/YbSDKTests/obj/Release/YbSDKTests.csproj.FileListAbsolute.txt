@@ -1,0 +1,12 @@
+F:\Github\游嘉明\YbSDK\YbSDKTests\bin\Release\YbSDKTests.dll.config
+F:\Github\游嘉明\YbSDK\YbSDKTests\bin\Release\YbSDKTests.dll
+F:\Github\游嘉明\YbSDK\YbSDKTests\bin\Release\YbSDKTests.pdb
+F:\Github\游嘉明\YbSDK\YbSDKTests\bin\Release\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+F:\Github\游嘉明\YbSDK\YbSDKTests\bin\Release\YbSDK.dll
+F:\Github\游嘉明\YbSDK\YbSDKTests\bin\Release\RestSharp.dll
+F:\Github\游嘉明\YbSDK\YbSDKTests\bin\Release\YbSDK.pdb
+F:\Github\游嘉明\YbSDK\YbSDKTests\bin\Release\YbSDK.xml
+F:\Github\游嘉明\YbSDK\YbSDKTests\bin\Release\RestSharp.xml
+F:\Github\游嘉明\YbSDK\YbSDKTests\obj\Release\YbSDKTests.csprojResolveAssemblyReference.cache
+F:\Github\游嘉明\YbSDK\YbSDKTests\obj\Release\YbSDKTests.dll
+F:\Github\游嘉明\YbSDK\YbSDKTests\obj\Release\YbSDKTests.pdb

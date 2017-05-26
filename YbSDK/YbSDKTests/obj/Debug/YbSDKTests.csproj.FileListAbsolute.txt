@@ -1,0 +1,21 @@
+F:\Github\游嘉明\YbSDK\YbSDKTests\bin\Debug\YbSDKTests.dll.config
+F:\Github\游嘉明\YbSDK\YbSDKTests\bin\Debug\YbSDKTests.dll
+F:\Github\游嘉明\YbSDK\YbSDKTests\bin\Debug\YbSDKTests.pdb
+F:\Github\游嘉明\YbSDK\YbSDKTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+F:\Github\游嘉明\YbSDK\YbSDKTests\bin\Debug\YbSDK.dll
+F:\Github\游嘉明\YbSDK\YbSDKTests\bin\Debug\RestSharp.dll
+F:\Github\游嘉明\YbSDK\YbSDKTests\bin\Debug\YbSDK.pdb
+F:\Github\游嘉明\YbSDK\YbSDKTests\bin\Debug\RestSharp.xml
+F:\Github\游嘉明\YbSDK\YbSDKTests\obj\Debug\YbSDKTests.csprojResolveAssemblyReference.cache
+F:\Github\游嘉明\YbSDK\YbSDKTests\obj\Debug\YbSDKTests.dll
+F:\Github\游嘉明\YbSDK\YbSDKTests\obj\Debug\YbSDKTests.pdb
+C:\Users\Wong Jianming\Desktop\请假-易班项目\YbSDK\YbSDKTests\bin\Debug\YbSDKTests.dll.config
+C:\Users\Wong Jianming\Desktop\请假-易班项目\YbSDK\YbSDKTests\bin\Debug\YbSDKTests.dll
+C:\Users\Wong Jianming\Desktop\请假-易班项目\YbSDK\YbSDKTests\bin\Debug\YbSDKTests.pdb
+C:\Users\Wong Jianming\Desktop\请假-易班项目\YbSDK\YbSDKTests\bin\Debug\YbSDK.dll
+C:\Users\Wong Jianming\Desktop\请假-易班项目\YbSDK\YbSDKTests\bin\Debug\RestSharp.dll
+C:\Users\Wong Jianming\Desktop\请假-易班项目\YbSDK\YbSDKTests\bin\Debug\YbSDK.pdb
+C:\Users\Wong Jianming\Desktop\请假-易班项目\YbSDK\YbSDKTests\bin\Debug\RestSharp.xml
+C:\Users\Wong Jianming\Desktop\请假-易班项目\YbSDK\YbSDKTests\obj\Debug\YbSDKTests.csprojResolveAssemblyReference.cache
+C:\Users\Wong Jianming\Desktop\请假-易班项目\YbSDK\YbSDKTests\obj\Debug\YbSDKTests.dll
+C:\Users\Wong Jianming\Desktop\请假-易班项目\YbSDK\YbSDKTests\obj\Debug\YbSDKTests.pdb
