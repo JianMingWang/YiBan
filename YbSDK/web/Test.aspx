@@ -11,6 +11,7 @@
     <form id="form1" runat="server">
     <div id="value" runat="server">
         <asp:TextBox ID="testValue" runat="server"></asp:TextBox>
+         <asp:TextBox ID="data" runat="server"></asp:TextBox>
     </div>
     </form>
 </body>

@@ -1,11 +1,11 @@
-﻿using YbSDK.Api;
-using YbSDK.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using YbSDK.Api;
+using YbSDK.Model;
 
 namespace web
 {
@@ -13,9 +13,15 @@ namespace web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            testValue.Text = "";
-            OauthApi oauth = new OauthApi();
-            AccessToken at = oauth.GetAccessToken("1");
+            if (Request["access_token"] != null)
+            {
+                testValue.Text = "授权成功，access_token为：" + Request["access_token"].ToString();
+                data.Text = Request["data"].ToString();
+            }
+            else
+            {
+                testValue.Text = "授权失败";
+            }
         }
     }
 }
