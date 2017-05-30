@@ -35,11 +35,10 @@ namespace web
                 request.Resource = "oauth/access_token";
                 request.RequestFormat = DataFormat.Json;
 
-
                 //添加参数
                 request.AddParameter("client_id", appid, ParameterType.QueryString);
                 request.AddParameter("client_secret", secret, ParameterType.QueryString);
-                request.AddParameter("code", code, ParameterType.QueryString);
+                request.AddParameter("code", code.ToString(), ParameterType.QueryString);
                 request.AddParameter("redirect_uri", "http://zhanglidaoyan.com", ParameterType.QueryString);
 
                 //获得response
