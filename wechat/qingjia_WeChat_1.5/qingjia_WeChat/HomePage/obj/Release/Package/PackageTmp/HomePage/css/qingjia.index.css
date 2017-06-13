@@ -1,0 +1,359 @@
+﻿body
+{
+}
+.index_top{
+    position:fixed;
+    top:0px;
+    width:100%;
+    height:8%;
+    margin:0px;
+    padding:0px;
+    z-index:1;
+}
+.qingjia_index_content_leave{
+    margin-top:14%;
+    display:none; 
+    background:none; 
+    width:100%; 
+    height:80%; 
+    position:absolute;
+}
+.qingjia_index_content_notice{
+    margin-top:14%;
+    display:block; 
+    background:none; 
+    width:100%; 
+    height:80%; 
+    position:absolute;
+}
+.qingjia_index_content_info{
+    margin-top:14%;
+    display:none; 
+    background:none; 
+    width:100%; 
+    height:80%; 
+    position:absolute;
+}
+
+
+.qingjia_index_content_leave{
+    margin-top:8%;
+    margin-left:20%;
+    display:none;
+    width:100%; 
+    height:87%; 
+    position:absolute;
+}
+.qingjia_index_content_notice{
+    margin-top:13%;
+    display:block;
+    width:100%; 
+    height:87%; 
+    position:absolute;
+}
+.qingjia_index_content_info{
+    margin-top:8%;
+    margin-left:20%;
+    display:none;
+    width:100%; 
+    height:87%; 
+    position:absolute;
+}
+.schoolleave_short{
+    margin-top:8%;
+    display:none;
+    width:100%; 
+    height:87%; 
+    position:absolute;
+}
+.schoolleave_long{
+    margin-top:13%;
+    display:none;
+    width:100%; 
+    height:87%; 
+    position:absolute;
+}
+.schoolleave_holiday{
+    margin-top:8%;
+    display:block;
+    width:100%; 
+    height:87%; 
+    position:absolute;
+}
+.specialleave_callroll{
+    margin-top:13%;
+    display:none;
+    width:100%; 
+    height:87%; 
+    position:absolute;
+}
+.specialleave_selfstudy{
+    margin-top:8%;  
+    display:block;
+    width:100%; 
+    height:87%; 
+    position:absolute;
+}
+.form_notaudited{
+     margin-top:8%;  
+    display:block;
+    width:100%; 
+    height:87%; 
+    position:absolute;
+}
+.form_audited{
+     margin-top:8%;  
+    display:none;
+    width:100%; 
+    height:87%; 
+    position:absolute;
+}
+#tabbar_label
+{
+  text-align: center;
+  color: white;
+  font-size: 12px;
+
+}
+.page__hd
+{
+   margin-top:8%;
+}
+#qingjia_schoolleave{
+    margin-top:17%;
+    width:100%; 
+    position:absolute;
+}
+.qingjia_schoolleavedetail{
+    margin-top:15%;
+    width:100%; 
+    position:absolute;
+
+}
+.weui-cells {
+  margin-top: 1.17647059em;
+  background-color: #FFFFFF;
+  line-height: 1.41176471;
+  font-size: 17px;
+  overflow: hidden;
+  position: relative;
+}
+.weui-cells_form .weui-cell__ft {
+  font-size: 0;
+}
+.weui-cells_form .weui-icon-warn {
+  display: none;
+}
+.weui-cells_form input,
+.weui-cells_form textarea,
+.weui-cells_form label[for] {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.weui-cell {
+  padding: 10px 15px;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.weui-label1 {
+  display: block;
+  width: 140px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.weui-cell__bd {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+}
+.weui-input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  -webkit-appearance: none;
+  background-color: transparent;
+  font-size: inherit;
+  color: inherit;
+  height: 1.41176471em;
+  line-height: 1.41176471;
+}
+.weui-btn_primary {
+  background-color: #1AAD19;
+}
+
+
+.weui-btn {
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 14px;
+  padding-right: 14px;
+  box-sizing: border-box;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  color: #FFFFFF;
+  line-height: 2.55555556;
+  border-radius: 5px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  overflow: hidden;
+}
+.weui-btn:after {
+  content: " ";
+  width: 200%;
+  height: 200%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+.weui-btn_primary1 {
+  background-color: #1AAD19;
+}
+.weui-btn_primary2 {
+  background-color: #e9c402;
+}
+.weui-btn_primary3 {
+  background-color: #0276d2;
+}
+.weui-btn_primary:not(.weui-btn_disabled):visited {
+  color: #FFFFFF;
+}
+.weui-btn_primary1:not(.weui-btn_disabled):active {
+  color: rgba(255, 255, 255, 0.6);
+  background-color: #179B16;
+}
+.weui-btn_primary2:not(.weui-btn_disabled):active {
+  color: rgba(255, 255, 255, 0.6);
+  background-color: #cfae01;
+}
+.weui-btn_primary3:not(.weui-btn_disabled):active {
+  color: rgba(255, 255, 255, 0.6);
+  background-color: #16679b;
+}
+#schoolleave_button{
+    top:25%;
+    width:60%; 
+    position:absolute;   
+}
+#specialleave_button{
+    top:45%;
+    width:60%; 
+    position:absolute;   
+}
+#classleave_button{
+    top:65%;
+    width:60%; 
+    position:absolute;   
+}
+#personInfo_button{
+    top:25%;
+    width:60%; 
+    position:absolute;   
+}
+#PW_button{
+    top:45%;
+    width:60%; 
+    position:absolute;   
+}
+#leaveList_button{
+    top:65%;
+    width:60%; 
+    position:absolute;   
+}
+
+.weui-label3 {
+  display: block;
+  width: 150px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.weui-label2 {
+  display: block;
+  width: 120px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.weui-label1 {
+  display: block;
+  width: 140px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.schoolleave_explain{
+    margin-top:8%;
+}
+.schoolleave_detail{
+    margin-top:15%;
+}
+.info_detail{
+    margin-top:8%;
+}
+.classleave_detail{
+    margin-top:8%;
+}
+.weui-cells__title {
+  margin-top: .77em;
+  margin-bottom: .3em;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: #999999;
+  font-size: 14px;
+}
+.weui-article {
+  padding: 20px 15px;
+  font-size: 15px;
+}
+.page__bd_spacing{
+	padding:0 15px;
+}
+
+.weui-cell_warn .weui-textarea-counter {
+  color: #E64340;
+}
+.weui-toptips {
+  display: none;
+  position: fixed;
+  -webkit-transform: translateZ(0);
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 5px;
+  font-size: 14px;
+  text-align: center;
+  color: #FFF;
+  z-index: 5000;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.weui-toptips_warn {
+  background-color: #E64340;
+}
+.weui-cells_form .weui-cell__ft {
+  font-size: 0;
+}
+.weui-cells_form .weui-icon-warn {
+  display: none;
+}
+.weui-cells_form input,
+.weui-cells_form textarea,
+.weui-cells_form label[for] {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.weui-cell_warn {
+  color: #E64340;
+}
+.weui-cell_warn .weui-icon-warn {
+  display: inline-block;
+}

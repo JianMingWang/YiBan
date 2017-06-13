@@ -1,0 +1,560 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8417E79A-2D6F-4D53-AC26-50D06AEA15FE}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>qingjia_WeChat</RootNamespace>
+    <AssemblyName>qingjia_WeChat</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HomePage\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="HomePage\obj\Debug\qingjia_WeChat.csprojResolveAssemblyReference.cache" />
+    <Content Include="HomePage\obj\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\Web.config" />
+    <Content Include="HomePage\obj\Release\TransformWebConfig\assist\Web.config" />
+    <Content Include="HomePage\obj\Release\TransformWebConfig\original\Web.config" />
+    <Content Include="HomePage\obj\Release\TransformWebConfig\transformed\Web.config" />
+    <Content Include="HomePage\UserAuth.ashx" />
+    <Content Include="HomePage\UserProcess.ashx" />
+    <None Include="Properties\PublishProfiles\配置文件.pubxml" />
+    <None Include="HomePage\Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="HomePage\Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="HomePage\SubPage\dev\css\mobiscroll.android-2.6.2.css" />
+    <Content Include="HomePage\SubPage\dev\css\mobiscroll.android-ics-2.6.2.css" />
+    <Content Include="HomePage\SubPage\dev\css\mobiscroll.animation-2.6.2.css" />
+    <Content Include="HomePage\SubPage\dev\css\mobiscroll.core-2.6.2.css" />
+    <Content Include="HomePage\SubPage\dev\css\mobiscroll.ios-2.6.2.css" />
+    <Content Include="HomePage\SubPage\dev\css\mobiscroll.jqm-2.6.2.css" />
+    <Content Include="HomePage\SubPage\dev\css\mobiscroll.sense-ui-2.6.2.css" />
+    <Content Include="HomePage\SubPage\dev\css\mobiscroll.wp-2.6.2.css" />
+    <Content Include="HomePage\SubPage\dev\css\wp_icons.png" />
+    <Content Include="HomePage\SubPage\dev\css\wp_icons_light.png" />
+    <Content Include="HomePage\SubPage\dev\js\mobiscroll.android-2.6.2.js" />
+    <Content Include="HomePage\SubPage\dev\js\mobiscroll.android-ics-2.6.2.js" />
+    <Content Include="HomePage\SubPage\dev\js\mobiscroll.core-2.6.2-de.js" />
+    <Content Include="HomePage\SubPage\dev\js\mobiscroll.core-2.6.2-es.js" />
+    <Content Include="HomePage\SubPage\dev\js\mobiscroll.core-2.6.2-fr.js" />
+    <Content Include="HomePage\SubPage\dev\js\mobiscroll.core-2.6.2-hu.js" />
+    <Content Include="HomePage\SubPage\dev\js\mobiscroll.core-2.6.2-it.js" />
+    <Content Include="HomePage\SubPage\dev\js\mobiscroll.core-2.6.2-ja.js" />
+    <Content Include="HomePage\SubPage\dev\js\mobiscroll.core-2.6.2-nl.js" />
+    <Content Include="HomePage\SubPage\dev\js\mobiscroll.core-2.6.2-no.js" />
+    <Content Include="HomePage\SubPage\dev\js\mobiscroll.core-2.6.2-pt-BR.js" />
+    <Content Include="HomePage\SubPage\dev\js\mobiscroll.core-2.6.2-tr.js" />
+    <Content Include="HomePage\SubPage\dev\js\mobiscroll.core-2.6.2-zh.js" />
+    <Content Include="HomePage\SubPage\dev\js\mobiscroll.core-2.6.2.js" />
+    <Content Include="HomePage\SubPage\dev\js\mobiscroll.datetime-2.6.2.js" />
+    <Content Include="HomePage\SubPage\dev\js\mobiscroll.ios-2.6.2.js" />
+    <Content Include="HomePage\SubPage\dev\js\mobiscroll.jqm-2.6.2.js" />
+    <Content Include="HomePage\SubPage\dev\js\mobiscroll.list-2.6.2.js" />
+    <Content Include="HomePage\SubPage\dev\js\mobiscroll.select-2.6.2.js" />
+    <Content Include="HomePage\SubPage\dev\js\mobiscroll.wp-2.6.2.js" />
+    <Content Include="HomePage\SubPage\images\classleave_detail.png" />
+    <Content Include="HomePage\SubPage\images\form_notaudited1.png" />
+    <Content Include="HomePage\SubPage\images\form_notaudited2.png" />
+    <Content Include="HomePage\SubPage\images\form_taudited1.png" />
+    <Content Include="HomePage\SubPage\images\form_taudited2.png" />
+    <Content Include="HomePage\SubPage\images\schoolleave_holiday1.png" />
+    <Content Include="HomePage\SubPage\images\schoolleave_holiday2 .png" />
+    <Content Include="HomePage\SubPage\images\schoolleave_long1.png" />
+    <Content Include="HomePage\SubPage\images\schoolleave_long2.png" />
+    <Content Include="HomePage\SubPage\images\schoolleave_short1.png" />
+    <Content Include="HomePage\SubPage\images\schoolleave_short2.png" />
+    <Content Include="HomePage\SubPage\images\specialleave_detail_callroll1.png" />
+    <Content Include="HomePage\SubPage\images\specialleave_detail_callroll2.png" />
+    <Content Include="HomePage\SubPage\images\specialleave_detail_selfstudy1.png" />
+    <Content Include="HomePage\SubPage\images\specialleave_detail_selfstudy2.png" />
+    <Content Include="web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HomePage\bin\qingjia_WeChat.dll" />
+    <Content Include="HomePage\bin\qingjia_WeChat.pdb" />
+    <Content Include="HomePage\css\example.css" />
+    <Content Include="HomePage\css\qingjia.index.css" />
+    <Content Include="HomePage\css\weui.css" />
+    <Content Include="HomePage\css\weui.min.css" />
+    <Content Include="HomePage\images\icon_back_.png" />
+    <Content Include="HomePage\images\icon_footer.png" />
+    <Content Include="HomePage\images\icon_footer_link.png" />
+    <Content Include="HomePage\images\icon_home.png" />
+    <Content Include="HomePage\images\icon_intro.png" />
+    <Content Include="HomePage\images\icon_nav_actionSheet.png" />
+    <Content Include="HomePage\images\icon_nav_article.png" />
+    <Content Include="HomePage\images\icon_nav_button.png" />
+    <Content Include="HomePage\images\icon_nav_cell.png" />
+    <Content Include="HomePage\images\icon_nav_dialog.png" />
+    <Content Include="HomePage\images\icon_nav_feedback.png" />
+    <Content Include="HomePage\images\icon_nav_flow.png" />
+    <Content Include="HomePage\images\icon_nav_form.png" />
+    <Content Include="HomePage\images\icon_nav_icons.png" />
+    <Content Include="HomePage\images\icon_nav_layout.png" />
+    <Content Include="HomePage\images\icon_nav_msg.png" />
+    <Content Include="HomePage\images\icon_nav_nav.png" />
+    <Content Include="HomePage\images\icon_nav_panel.png" />
+    <Content Include="HomePage\images\icon_nav_progress.png" />
+    <Content Include="HomePage\images\icon_nav_search.png" />
+    <Content Include="HomePage\images\icon_nav_search_bar.png" />
+    <Content Include="HomePage\images\icon_nav_special.png" />
+    <Content Include="HomePage\images\icon_nav_tab.png" />
+    <Content Include="HomePage\images\icon_nav_toast.png" />
+    <Content Include="HomePage\images\icon_nav_z-index.png" />
+    <Content Include="HomePage\images\icon_nav_zindex.png" />
+    <Content Include="HomePage\images\icon_tabbar.png" />
+    <Content Include="HomePage\images\layers\content.png" />
+    <Content Include="HomePage\images\layers\navigation.png" />
+    <Content Include="HomePage\images\layers\popout.png" />
+    <Content Include="HomePage\images\layers\transparent.gif" />
+    <Content Include="HomePage\images\logo.png" />
+    <Content Include="HomePage\images\pic_160.png" />
+    <Content Include="HomePage\images\pic_article.png" />
+    <Content Include="HomePage\images\vcode.jpg" />
+    <Content Include="HomePage\js\example.js" />
+    <Content Include="HomePage\js\router.min.js" />
+    <Content Include="HomePage\js\zepto.min.js" />
+    <Content Include="HomePage\obj\Debug\qingjia_WeChat.csproj.FileListAbsolute.txt" />
+    <Content Include="HomePage\obj\Debug\qingjia_WeChat.dll" />
+    <Content Include="HomePage\obj\Debug\qingjia_WeChat.pdb" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\bin\qingjia_WeChat.dll" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\HomePage\css\example.css" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\HomePage\css\qingjia.index.css" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\HomePage\css\weui.css" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\HomePage\css\weui.min.css" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\HomePage\images\icon_back_.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\HomePage\images\icon_footer.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\HomePage\images\icon_footer_link.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\HomePage\images\icon_home.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\HomePage\images\icon_intro.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\HomePage\images\icon_nav_actionSheet.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\HomePage\images\icon_nav_article.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\HomePage\images\icon_nav_button.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\HomePage\images\icon_nav_cell.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\HomePage\images\icon_nav_dialog.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\HomePage\images\icon_nav_feedback.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\HomePage\images\icon_nav_flow.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\HomePage\images\icon_nav_form.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\HomePage\images\icon_nav_icons.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\HomePage\images\icon_nav_layout.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\HomePage\images\icon_nav_msg.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\HomePage\images\icon_nav_nav.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\HomePage\images\icon_nav_panel.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\HomePage\images\icon_nav_progress.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\HomePage\images\icon_nav_search.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\HomePage\images\icon_nav_search_bar.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\HomePage\images\icon_nav_special.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\HomePage\images\icon_nav_tab.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\HomePage\images\icon_nav_toast.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\HomePage\images\icon_nav_z-index.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\HomePage\images\icon_nav_zindex.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\HomePage\images\icon_tabbar.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\HomePage\images\layers\content.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\HomePage\images\layers\navigation.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\HomePage\images\layers\popout.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\HomePage\images\layers\transparent.gif" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\HomePage\images\logo.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\HomePage\images\pic_160.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\HomePage\images\pic_article.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\HomePage\images\vcode.jpg" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\HomePage\js\example.js" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\HomePage\js\router.min.js" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\HomePage\js\zepto.min.js" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\HomePage\qingjia_WeChat.aspx" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\bind.aspx" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\classleave.aspx" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\classleave_detail.aspx" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\classleave_succeed.aspx" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\css\example.css" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\css\index.css" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\css\weui.css" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\form_notaudited.aspx" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\form_succeed.aspx" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\form_taudited.aspx" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\images\icon_back_.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\images\icon_footer.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\images\icon_footer_link.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\images\icon_home.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\images\icon_intro.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\images\icon_nav_actionSheet.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\images\icon_nav_article.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\images\icon_nav_button.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\images\icon_nav_cell.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\images\icon_nav_dialog.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\images\icon_nav_feedback.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\images\icon_nav_flow.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\images\icon_nav_form.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\images\icon_nav_icons.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\images\icon_nav_layout.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\images\icon_nav_msg.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\images\icon_nav_nav.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\images\icon_nav_panel.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\images\icon_nav_progress.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\images\icon_nav_search.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\images\icon_nav_search_bar.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\images\icon_nav_special.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\images\icon_nav_tab.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\images\icon_nav_toast.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\images\icon_nav_z-index.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\images\icon_nav_zindex.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\images\icon_tabbar.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\images\layers\content.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\images\layers\navigation.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\images\layers\popout.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\images\layers\transparent.gif" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\images\logo.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\images\pic_160.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\images\pic_article.png" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\images\vcode.jpg" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\info_detail.aspx" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\info_succeed.aspx" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\js\example0.js" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\js\router.min.js" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\js\zepto.min.js" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\modify_detail.aspx" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\modify_succeed.aspx" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\schoolleave.aspx" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\schoolleave_detail_holiday.aspx" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\schoolleave_detail_long.aspx" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\schoolleave_detail_short.aspx" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\schoolleave_succeed.aspx" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\specialleave.aspx" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\specialleave_detail_callroll.aspx" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\specialleave_detail_selfstudy.aspx" />
+    <Content Include="HomePage\obj\Release\Package\PackageTmp\SubPage\specialleave_succeed.aspx" />
+    <Content Include="HomePage\obj\Release\qingjia_WeChat.csproj.FileListAbsolute.txt" />
+    <Content Include="HomePage\obj\Release\qingjia_WeChat.dll" />
+    <Content Include="HomePage\obj\Release\qingjia_WeChat.pdb" />
+    <Content Include="HomePage\obj\Release\_WPPLastBuildInfo.txt" />
+    <Content Include="HomePage\qingjia_WeChat.aspx" />
+    <Content Include="HomePage\SubPage\bind.aspx" />
+    <Content Include="HomePage\SubPage\classleave.aspx" />
+    <Content Include="HomePage\SubPage\classleave_detail.aspx" />
+    <Content Include="HomePage\SubPage\classleave_succeed.aspx" />
+    <Content Include="HomePage\SubPage\css\example.css" />
+    <Content Include="HomePage\SubPage\css\index.css" />
+    <Content Include="HomePage\SubPage\css\weui.css" />
+    <Content Include="HomePage\SubPage\form_notaudited.aspx" />
+    <Content Include="HomePage\SubPage\form_succeed.aspx" />
+    <Content Include="HomePage\SubPage\images\icon_back_.png" />
+    <Content Include="HomePage\SubPage\images\icon_footer.png" />
+    <Content Include="HomePage\SubPage\images\icon_footer_link.png" />
+    <Content Include="HomePage\SubPage\images\icon_home.png" />
+    <Content Include="HomePage\SubPage\images\icon_intro.png" />
+    <Content Include="HomePage\SubPage\images\icon_nav_actionSheet.png" />
+    <Content Include="HomePage\SubPage\images\icon_nav_article.png" />
+    <Content Include="HomePage\SubPage\images\icon_nav_button.png" />
+    <Content Include="HomePage\SubPage\images\icon_nav_cell.png" />
+    <Content Include="HomePage\SubPage\images\icon_nav_dialog.png" />
+    <Content Include="HomePage\SubPage\images\icon_nav_feedback.png" />
+    <Content Include="HomePage\SubPage\images\icon_nav_flow.png" />
+    <Content Include="HomePage\SubPage\images\icon_nav_form.png" />
+    <Content Include="HomePage\SubPage\images\icon_nav_icons.png" />
+    <Content Include="HomePage\SubPage\images\icon_nav_layout.png" />
+    <Content Include="HomePage\SubPage\images\icon_nav_msg.png" />
+    <Content Include="HomePage\SubPage\images\icon_nav_nav.png" />
+    <Content Include="HomePage\SubPage\images\icon_nav_panel.png" />
+    <Content Include="HomePage\SubPage\images\icon_nav_progress.png" />
+    <Content Include="HomePage\SubPage\images\icon_nav_search.png" />
+    <Content Include="HomePage\SubPage\images\icon_nav_search_bar.png" />
+    <Content Include="HomePage\SubPage\images\icon_nav_special.png" />
+    <Content Include="HomePage\SubPage\images\icon_nav_tab.png" />
+    <Content Include="HomePage\SubPage\images\icon_nav_toast.png" />
+    <Content Include="HomePage\SubPage\images\icon_nav_z-index.png" />
+    <Content Include="HomePage\SubPage\images\icon_nav_zindex.png" />
+    <Content Include="HomePage\SubPage\images\icon_tabbar.png" />
+    <Content Include="HomePage\SubPage\images\layers\content.png" />
+    <Content Include="HomePage\SubPage\images\layers\navigation.png" />
+    <Content Include="HomePage\SubPage\images\layers\popout.png" />
+    <Content Include="HomePage\SubPage\images\layers\transparent.gif" />
+    <Content Include="HomePage\SubPage\images\logo.png" />
+    <Content Include="HomePage\SubPage\images\pic_160.png" />
+    <Content Include="HomePage\SubPage\images\pic_article.png" />
+    <Content Include="HomePage\SubPage\images\vcode.jpg" />
+    <Content Include="HomePage\SubPage\info_detail.aspx" />
+    <Content Include="HomePage\SubPage\info_succeed.aspx" />
+    <Content Include="HomePage\SubPage\js\example0.js" />
+    <Content Include="HomePage\SubPage\js\router.min.js" />
+    <Content Include="HomePage\SubPage\js\zepto.min.js" />
+    <Content Include="HomePage\SubPage\modify_detail.aspx" />
+    <Content Include="HomePage\SubPage\modify_succeed.aspx" />
+    <Content Include="HomePage\SubPage\schoolleave.aspx" />
+    <Content Include="HomePage\SubPage\schoolleave_succeed.aspx" />
+    <Content Include="HomePage\SubPage\specialleave.aspx" />
+    <Content Include="HomePage\SubPage\specialleave_succeed.aspx" />
+    <Content Include="HomePage\SubPage\specialleave_detail_selfstudy.aspx" />
+    <Content Include="HomePage\SubPage\specialleave_detail_callroll.aspx" />
+    <Content Include="HomePage\SubPage\schoolleave_detail_short.aspx" />
+    <Content Include="HomePage\SubPage\schoolleave_detail_long.aspx" />
+    <Content Include="HomePage\SubPage\schoolleave_detail_holiday.aspx" />
+    <Content Include="HomePage\SubPage\form_taudited.aspx" />
+    <Content Include="HomePage\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HomePage\Class\DB.cs" />
+    <Compile Include="HomePage\Class\LeaveList.cs" />
+    <Compile Include="HomePage\Class\LL_Model.cs" />
+    <Compile Include="HomePage\Class\Student.cs" />
+    <Compile Include="HomePage\obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="HomePage\obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="HomePage\obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="HomePage\obj\Release\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="HomePage\obj\Release\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="HomePage\obj\Release\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="HomePage\qingjia_WeChat.aspx.cs">
+      <DependentUpon>qingjia_WeChat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomePage\qingjia_WeChat.aspx.designer.cs">
+      <DependentUpon>qingjia_WeChat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomePage\UserAuth.ashx.cs">
+      <DependentUpon>UserAuth.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="HomePage\UserProcess.ashx.cs">
+      <DependentUpon>UserProcess.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="HomePage\SubPage\bind.aspx.cs">
+      <DependentUpon>bind.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomePage\SubPage\bind.aspx.designer.cs">
+      <DependentUpon>bind.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomePage\SubPage\classleave.aspx.cs">
+      <DependentUpon>classleave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomePage\SubPage\classleave.aspx.designer.cs">
+      <DependentUpon>classleave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomePage\SubPage\classleave_detail.aspx.cs">
+      <DependentUpon>classleave_detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomePage\SubPage\classleave_detail.aspx.designer.cs">
+      <DependentUpon>classleave_detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomePage\SubPage\classleave_succeed.aspx.cs">
+      <DependentUpon>classleave_succeed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomePage\SubPage\classleave_succeed.aspx.designer.cs">
+      <DependentUpon>classleave_succeed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomePage\SubPage\form_notaudited.aspx.cs">
+      <DependentUpon>form_notaudited.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomePage\SubPage\form_notaudited.aspx.designer.cs">
+      <DependentUpon>form_notaudited.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomePage\SubPage\form_succeed.aspx.cs">
+      <DependentUpon>form_succeed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomePage\SubPage\form_succeed.aspx.designer.cs">
+      <DependentUpon>form_succeed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomePage\SubPage\info_detail.aspx.cs">
+      <DependentUpon>info_detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomePage\SubPage\info_detail.aspx.designer.cs">
+      <DependentUpon>info_detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomePage\SubPage\info_succeed.aspx.cs">
+      <DependentUpon>info_succeed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomePage\SubPage\info_succeed.aspx.designer.cs">
+      <DependentUpon>info_succeed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomePage\SubPage\modify_detail.aspx.cs">
+      <DependentUpon>modify_detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomePage\SubPage\modify_detail.aspx.designer.cs">
+      <DependentUpon>modify_detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomePage\SubPage\modify_succeed.aspx.cs">
+      <DependentUpon>modify_succeed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomePage\SubPage\modify_succeed.aspx.designer.cs">
+      <DependentUpon>modify_succeed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomePage\SubPage\schoolleave.aspx.cs">
+      <DependentUpon>schoolleave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomePage\SubPage\schoolleave.aspx.designer.cs">
+      <DependentUpon>schoolleave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomePage\SubPage\schoolleave_succeed.aspx.cs">
+      <DependentUpon>schoolleave_succeed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomePage\SubPage\schoolleave_succeed.aspx.designer.cs">
+      <DependentUpon>schoolleave_succeed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomePage\SubPage\specialleave.aspx.cs">
+      <DependentUpon>specialleave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomePage\SubPage\specialleave.aspx.designer.cs">
+      <DependentUpon>specialleave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomePage\SubPage\specialleave_succeed.aspx.cs">
+      <DependentUpon>specialleave_succeed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomePage\SubPage\specialleave_succeed.aspx.designer.cs">
+      <DependentUpon>specialleave_succeed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomePage\SubPage\specialleave_detail_selfstudy.aspx.cs">
+      <DependentUpon>specialleave_detail_selfstudy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomePage\SubPage\specialleave_detail_selfstudy.aspx.designer.cs">
+      <DependentUpon>specialleave_detail_selfstudy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomePage\SubPage\specialleave_detail_callroll.aspx.cs">
+      <DependentUpon>specialleave_detail_callroll.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomePage\SubPage\specialleave_detail_callroll.aspx.designer.cs">
+      <DependentUpon>specialleave_detail_callroll.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomePage\SubPage\schoolleave_detail_short.aspx.cs">
+      <DependentUpon>schoolleave_detail_short.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomePage\SubPage\schoolleave_detail_short.aspx.designer.cs">
+      <DependentUpon>schoolleave_detail_short.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomePage\SubPage\schoolleave_detail_long.aspx.cs">
+      <DependentUpon>schoolleave_detail_long.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomePage\SubPage\schoolleave_detail_long.aspx.designer.cs">
+      <DependentUpon>schoolleave_detail_long.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomePage\SubPage\schoolleave_detail_holiday.aspx.cs">
+      <DependentUpon>schoolleave_detail_holiday.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomePage\SubPage\schoolleave_detail_holiday.aspx.designer.cs">
+      <DependentUpon>schoolleave_detail_holiday.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomePage\SubPage\form_taudited.aspx.cs">
+      <DependentUpon>form_taudited.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomePage\SubPage\form_taudited.aspx.designer.cs">
+      <DependentUpon>form_taudited.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="HomePage\obj\Debug\Package\" />
+    <Folder Include="HomePage\obj\Debug\TempPE\" />
+    <Folder Include="HomePage\obj\Release\ProfileTransformWebConfig\transformed\" />
+    <Folder Include="HomePage\obj\Release\TempPE\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>46603</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:46603/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

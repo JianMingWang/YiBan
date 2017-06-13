@@ -1,0 +1,35 @@
+C:\Users\健铭\Desktop\请假系统微信端\qingjia_WeChat_1.1\qingjia_WeChat\bin\qingjia_WeChat.dll.config
+C:\Users\健铭\Desktop\请假系统微信端\qingjia_WeChat_1.1\qingjia_WeChat\bin\qingjia_WeChat.dll
+C:\Users\健铭\Desktop\请假系统微信端\qingjia_WeChat_1.1\qingjia_WeChat\bin\qingjia_WeChat.pdb
+C:\Users\健铭\Desktop\请假系统微信端\qingjia_WeChat_1.1\qingjia_WeChat\obj\Debug\qingjia_WeChat.dll
+C:\Users\健铭\Desktop\请假系统微信端\qingjia_WeChat_1.1\qingjia_WeChat\obj\Debug\qingjia_WeChat.pdb
+C:\Users\健铭\Desktop\请假系统微信端\qingjia_WeChat_1.1\qingjia_WeChat\obj\Debug\qingjia_WeChat.csprojResolveAssemblyReference.cache
+D:\请假系统微信端\qingjia_WeChat_1.1\qingjia_WeChat\bin\qingjia_WeChat.dll.config
+D:\请假系统微信端\qingjia_WeChat_1.1\qingjia_WeChat\bin\qingjia_WeChat.dll
+D:\请假系统微信端\qingjia_WeChat_1.1\qingjia_WeChat\bin\qingjia_WeChat.pdb
+D:\请假系统微信端\qingjia_WeChat_1.1\qingjia_WeChat\obj\Debug\qingjia_WeChat.dll
+D:\请假系统微信端\qingjia_WeChat_1.1\qingjia_WeChat\obj\Debug\qingjia_WeChat.pdb
+D:\请假系统微信端\qingjia_WeChat_1.1\qingjia_WeChat\obj\Debug\qingjia_WeChat.csprojResolveAssemblyReference.cache
+C:\项目文件\请假系统微信端\qingjia_WeChat_1.1\qingjia_WeChat\bin\qingjia_WeChat.dll.config
+C:\项目文件\请假系统微信端\qingjia_WeChat_1.1\qingjia_WeChat\bin\qingjia_WeChat.dll
+C:\项目文件\请假系统微信端\qingjia_WeChat_1.1\qingjia_WeChat\bin\qingjia_WeChat.pdb
+C:\项目文件\请假系统微信端\qingjia_WeChat_1.1\qingjia_WeChat\obj\Debug\qingjia_WeChat.csprojResolveAssemblyReference.cache
+C:\项目文件\请假系统微信端\qingjia_WeChat_1.1\qingjia_WeChat\obj\Debug\qingjia_WeChat.dll
+C:\项目文件\请假系统微信端\qingjia_WeChat_1.1\qingjia_WeChat\obj\Debug\qingjia_WeChat.pdb
+C:\项目文件\请假系统微信端\qingjia_WeChat_1.3\qingjia_WeChat\bin\qingjia_WeChat.dll.config
+C:\项目文件\请假系统微信端\qingjia_WeChat_1.3\qingjia_WeChat\bin\qingjia_WeChat.dll
+C:\项目文件\请假系统微信端\qingjia_WeChat_1.3\qingjia_WeChat\bin\qingjia_WeChat.pdb
+C:\项目文件\请假系统微信端\qingjia_WeChat_1.3\qingjia_WeChat\obj\Debug\qingjia_WeChat.dll
+C:\项目文件\请假系统微信端\qingjia_WeChat_1.3\qingjia_WeChat\obj\Debug\qingjia_WeChat.pdb
+C:\项目文件\请假系统微信端\qingjia_WeChat_1.3\qingjia_WeChat\obj\Debug\qingjia_WeChat.csprojResolveAssemblyReference.cache
+C:\Users\Wong Jianming\Desktop\qingjia_WeChat_1.4\qingjia_WeChat\bin\qingjia_WeChat.dll.config
+C:\Users\Wong Jianming\Desktop\qingjia_WeChat_1.4\qingjia_WeChat\bin\qingjia_WeChat.dll
+C:\Users\Wong Jianming\Desktop\qingjia_WeChat_1.4\qingjia_WeChat\bin\qingjia_WeChat.pdb
+C:\Users\Wong Jianming\Desktop\qingjia_WeChat_1.4\qingjia_WeChat\obj\Debug\qingjia_WeChat.csprojResolveAssemblyReference.cache
+C:\Users\Wong Jianming\Desktop\qingjia_WeChat_1.4\qingjia_WeChat\obj\Debug\qingjia_WeChat.dll
+C:\Users\Wong Jianming\Desktop\qingjia_WeChat_1.4\qingjia_WeChat\obj\Debug\qingjia_WeChat.pdb
+C:\Users\Wong Jianming\Desktop\qingjia_WeChat_1.5\qingjia_WeChat\bin\qingjia_WeChat.dll.config
+C:\Users\Wong Jianming\Desktop\qingjia_WeChat_1.5\qingjia_WeChat\bin\qingjia_WeChat.dll
+C:\Users\Wong Jianming\Desktop\qingjia_WeChat_1.5\qingjia_WeChat\bin\qingjia_WeChat.pdb
+C:\Users\Wong Jianming\Desktop\qingjia_WeChat_1.5\qingjia_WeChat\obj\Debug\qingjia_WeChat.dll
+C:\Users\Wong Jianming\Desktop\qingjia_WeChat_1.5\qingjia_WeChat\obj\Debug\qingjia_WeChat.pdb

@@ -1,0 +1,5 @@
+C:\Users\健铭\Desktop\qingjia_WeChat_1.1\qingjia_WeChat\bin\qingjia_WeChat.dll.config
+C:\Users\健铭\Desktop\qingjia_WeChat_1.1\qingjia_WeChat\bin\qingjia_WeChat.dll
+C:\Users\健铭\Desktop\qingjia_WeChat_1.1\qingjia_WeChat\bin\qingjia_WeChat.pdb
+C:\Users\健铭\Desktop\qingjia_WeChat_1.1\qingjia_WeChat\obj\Release\qingjia_WeChat.dll
+C:\Users\健铭\Desktop\qingjia_WeChat_1.1\qingjia_WeChat\obj\Release\qingjia_WeChat.pdb
