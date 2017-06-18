@@ -11,7 +11,11 @@
     <form id="form1" runat="server">
     <div id="value" runat="server">
         <asp:TextBox ID="testValue" runat="server"></asp:TextBox>
-         <asp:TextBox ID="data" runat="server"></asp:TextBox>
+        <br />
+        <asp:TextBox ID="data" runat="server"></asp:TextBox>
+        <br />
+        <asp:Button ID="userInfoButton" runat="server" Text="获取用户个人信息" OnClick="userInfoButton_Click" />
+        <asp:TextBox ID="userInfo" runat="server"></asp:TextBox>
     </div>
     </form>
 </body>
