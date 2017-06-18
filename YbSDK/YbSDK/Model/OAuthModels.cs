@@ -20,7 +20,6 @@ namespace YbSDK.Model
         /// </summary>
         public int expires { get; set; }
 
-
     }
 
     public class TokenInfo
@@ -31,7 +30,6 @@ namespace YbSDK.Model
         public string create_at { get; set; }
         public string expire_in { get; set; }
     }
-
 
     /// <summary>
     /// 站内应用，轻应用授权检测结果

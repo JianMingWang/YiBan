@@ -8,3 +8,13 @@ C:\Users\Wong Jianming\Desktop\请假-易班项目\YbSDK\web\bin\RestSharp.xml
 C:\Users\Wong Jianming\Desktop\请假-易班项目\YbSDK\web\obj\Debug\web.csprojResolveAssemblyReference.cache
 C:\Users\Wong Jianming\Desktop\请假-易班项目\YbSDK\web\obj\Debug\web.dll
 C:\Users\Wong Jianming\Desktop\请假-易班项目\YbSDK\web\obj\Debug\web.pdb
+C:\Users\Wong Jianming\Desktop\YiBan\YbSDK\web\bin\web.dll.config
+C:\Users\Wong Jianming\Desktop\YiBan\YbSDK\web\bin\web.dll
+C:\Users\Wong Jianming\Desktop\YiBan\YbSDK\web\bin\web.pdb
+C:\Users\Wong Jianming\Desktop\YiBan\YbSDK\web\bin\RestSharp.dll
+C:\Users\Wong Jianming\Desktop\YiBan\YbSDK\web\bin\YbSDK.dll
+C:\Users\Wong Jianming\Desktop\YiBan\YbSDK\web\bin\RestSharp.xml
+C:\Users\Wong Jianming\Desktop\YiBan\YbSDK\web\bin\YbSDK.pdb
+C:\Users\Wong Jianming\Desktop\YiBan\YbSDK\web\obj\Debug\web.dll
+C:\Users\Wong Jianming\Desktop\YiBan\YbSDK\web\obj\Debug\web.pdb
+C:\Users\Wong Jianming\Desktop\YiBan\YbSDK\web\obj\Debug\web.csprojResolveAssemblyReference.cache
