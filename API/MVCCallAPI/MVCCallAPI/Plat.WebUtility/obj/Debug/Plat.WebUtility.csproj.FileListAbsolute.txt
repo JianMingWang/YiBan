@@ -1,0 +1,43 @@
+E:\蓝盾工作\框架集\Plat2012-master\Plat2012-master\Source\PlatFramework\Plat.WebUtility\bin\Debug\Plat.WebUtility.dll
+E:\蓝盾工作\框架集\Plat2012-master\Plat2012-master\Source\PlatFramework\Plat.WebUtility\bin\Debug\Plat.WebUtility.pdb
+E:\蓝盾工作\框架集\Plat2012-master\Plat2012-master\Source\PlatFramework\Plat.WebUtility\bin\Debug\AutoMapper.dll
+E:\蓝盾工作\框架集\Plat2012-master\Plat2012-master\Source\PlatFramework\Plat.WebUtility\bin\Debug\Newtonsoft.Json.dll
+E:\蓝盾工作\框架集\Plat2012-master\Plat2012-master\Source\PlatFramework\Plat.WebUtility\bin\Debug\RestSharp.dll
+E:\蓝盾工作\框架集\Plat2012-master\Plat2012-master\Source\PlatFramework\Plat.WebUtility\bin\Debug\System.Net.Http.Formatting.dll
+E:\蓝盾工作\框架集\Plat2012-master\Plat2012-master\Source\PlatFramework\Plat.WebUtility\bin\Debug\System.Web.Http.dll
+E:\蓝盾工作\框架集\Plat2012-master\Plat2012-master\Source\PlatFramework\Plat.WebUtility\bin\Debug\System.Net.Http.Formatting.xml
+E:\蓝盾工作\框架集\Plat2012-master\Plat2012-master\Source\PlatFramework\Plat.WebUtility\bin\Debug\System.Web.Http.xml
+E:\蓝盾工作\框架集\Plat2012-master\Plat2012-master\Source\PlatFramework\Plat.WebUtility\bin\Debug\zh-Hans\System.Net.Http.Formatting.resources.dll
+E:\蓝盾工作\框架集\Plat2012-master\Plat2012-master\Source\PlatFramework\Plat.WebUtility\bin\Debug\zh-Hans\System.Web.Http.resources.dll
+E:\蓝盾工作\框架集\Plat2012-master\Plat2012-master\Source\PlatFramework\Plat.WebUtility\obj\Debug\Plat.WebUtility.csprojResolveAssemblyReference.cache
+E:\蓝盾工作\框架集\Plat2012-master\Plat2012-master\Source\PlatFramework\Plat.WebUtility\obj\Debug\Plat.WebUtility.dll
+E:\蓝盾工作\框架集\Plat2012-master\Plat2012-master\Source\PlatFramework\Plat.WebUtility\obj\Debug\Plat.WebUtility.pdb
+D:\用户目录\我的文档\Visual Studio 2015\Projects\MVCCallAPI\MVCCallAPI\Plat.WebUtility\bin\Debug\Plat.WebUtility.dll
+D:\用户目录\我的文档\Visual Studio 2015\Projects\MVCCallAPI\MVCCallAPI\Plat.WebUtility\bin\Debug\Plat.WebUtility.pdb
+D:\用户目录\我的文档\Visual Studio 2015\Projects\MVCCallAPI\MVCCallAPI\Plat.WebUtility\bin\Debug\Newtonsoft.Json.dll
+D:\用户目录\我的文档\Visual Studio 2015\Projects\MVCCallAPI\MVCCallAPI\Plat.WebUtility\bin\Debug\System.Net.Http.Formatting.dll
+D:\用户目录\我的文档\Visual Studio 2015\Projects\MVCCallAPI\MVCCallAPI\Plat.WebUtility\bin\Debug\System.Web.Http.dll
+D:\用户目录\我的文档\Visual Studio 2015\Projects\MVCCallAPI\MVCCallAPI\Plat.WebUtility\bin\Debug\System.Web.Mvc.dll
+D:\用户目录\我的文档\Visual Studio 2015\Projects\MVCCallAPI\MVCCallAPI\Plat.WebUtility\bin\Debug\System.Web.Razor.dll
+D:\用户目录\我的文档\Visual Studio 2015\Projects\MVCCallAPI\MVCCallAPI\Plat.WebUtility\bin\Debug\System.Web.WebPages.Razor.dll
+D:\用户目录\我的文档\Visual Studio 2015\Projects\MVCCallAPI\MVCCallAPI\Plat.WebUtility\bin\Debug\System.Web.WebPages.dll
+D:\用户目录\我的文档\Visual Studio 2015\Projects\MVCCallAPI\MVCCallAPI\Plat.WebUtility\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\用户目录\我的文档\Visual Studio 2015\Projects\MVCCallAPI\MVCCallAPI\Plat.WebUtility\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\用户目录\我的文档\Visual Studio 2015\Projects\MVCCallAPI\MVCCallAPI\Plat.WebUtility\bin\Debug\System.Net.Http.Formatting.xml
+D:\用户目录\我的文档\Visual Studio 2015\Projects\MVCCallAPI\MVCCallAPI\Plat.WebUtility\bin\Debug\System.Web.Http.xml
+D:\用户目录\我的文档\Visual Studio 2015\Projects\MVCCallAPI\MVCCallAPI\Plat.WebUtility\bin\Debug\System.Web.Mvc.xml
+D:\用户目录\我的文档\Visual Studio 2015\Projects\MVCCallAPI\MVCCallAPI\Plat.WebUtility\bin\Debug\System.Web.Razor.xml
+D:\用户目录\我的文档\Visual Studio 2015\Projects\MVCCallAPI\MVCCallAPI\Plat.WebUtility\bin\Debug\System.Web.WebPages.Razor.xml
+D:\用户目录\我的文档\Visual Studio 2015\Projects\MVCCallAPI\MVCCallAPI\Plat.WebUtility\bin\Debug\System.Web.WebPages.xml
+D:\用户目录\我的文档\Visual Studio 2015\Projects\MVCCallAPI\MVCCallAPI\Plat.WebUtility\bin\Debug\Microsoft.Web.Infrastructure.xml
+D:\用户目录\我的文档\Visual Studio 2015\Projects\MVCCallAPI\MVCCallAPI\Plat.WebUtility\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\用户目录\我的文档\Visual Studio 2015\Projects\MVCCallAPI\MVCCallAPI\Plat.WebUtility\bin\Debug\zh-Hans\System.Net.Http.Formatting.resources.dll
+D:\用户目录\我的文档\Visual Studio 2015\Projects\MVCCallAPI\MVCCallAPI\Plat.WebUtility\bin\Debug\zh-Hans\System.Web.Http.resources.dll
+D:\用户目录\我的文档\Visual Studio 2015\Projects\MVCCallAPI\MVCCallAPI\Plat.WebUtility\bin\Debug\zh-Hans\System.Web.Mvc.resources.dll
+D:\用户目录\我的文档\Visual Studio 2015\Projects\MVCCallAPI\MVCCallAPI\Plat.WebUtility\bin\Debug\zh-Hans\System.Web.Razor.resources.dll
+D:\用户目录\我的文档\Visual Studio 2015\Projects\MVCCallAPI\MVCCallAPI\Plat.WebUtility\bin\Debug\zh-Hans\System.Web.WebPages.Razor.resources.dll
+D:\用户目录\我的文档\Visual Studio 2015\Projects\MVCCallAPI\MVCCallAPI\Plat.WebUtility\bin\Debug\zh-Hans\System.Web.WebPages.resources.dll
+D:\用户目录\我的文档\Visual Studio 2015\Projects\MVCCallAPI\MVCCallAPI\Plat.WebUtility\bin\Debug\zh-Hans\System.Web.WebPages.Deployment.resources.dll
+D:\用户目录\我的文档\Visual Studio 2015\Projects\MVCCallAPI\MVCCallAPI\Plat.WebUtility\obj\Debug\Plat.WebUtility.csprojResolveAssemblyReference.cache
+D:\用户目录\我的文档\Visual Studio 2015\Projects\MVCCallAPI\MVCCallAPI\Plat.WebUtility\obj\Debug\Plat.WebUtility.dll
+D:\用户目录\我的文档\Visual Studio 2015\Projects\MVCCallAPI\MVCCallAPI\Plat.WebUtility\obj\Debug\Plat.WebUtility.pdb
