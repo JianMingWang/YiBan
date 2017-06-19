@@ -33,3 +33,7 @@ C:\Users\Wong Jianming\Desktop\qingjia_WeChat_1.5\qingjia_WeChat\bin\qingjia_WeC
 C:\Users\Wong Jianming\Desktop\qingjia_WeChat_1.5\qingjia_WeChat\bin\qingjia_WeChat.pdb
 C:\Users\Wong Jianming\Desktop\qingjia_WeChat_1.5\qingjia_WeChat\obj\Debug\qingjia_WeChat.dll
 C:\Users\Wong Jianming\Desktop\qingjia_WeChat_1.5\qingjia_WeChat\obj\Debug\qingjia_WeChat.pdb
+C:\Users\Wong Jianming\Desktop\YiBan\wechat\qingjia_WeChat_1.5\qingjia_WeChat\bin\qingjia_WeChat.dll
+C:\Users\Wong Jianming\Desktop\YiBan\wechat\qingjia_WeChat_1.5\qingjia_WeChat\bin\qingjia_WeChat.pdb
+C:\Users\Wong Jianming\Desktop\YiBan\wechat\qingjia_WeChat_1.5\qingjia_WeChat\obj\Debug\qingjia_WeChat.dll
+C:\Users\Wong Jianming\Desktop\YiBan\wechat\qingjia_WeChat_1.5\qingjia_WeChat\obj\Debug\qingjia_WeChat.pdb

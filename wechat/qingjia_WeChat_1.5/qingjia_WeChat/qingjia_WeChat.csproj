@@ -119,16 +119,6 @@
     <Content Include="HomePage\SubPage\images\specialleave_detail_callroll2.png" />
     <Content Include="HomePage\SubPage\images\specialleave_detail_selfstudy1.png" />
     <Content Include="HomePage\SubPage\images\specialleave_detail_selfstudy2.png" />
-    <Content Include="web.config">
-      <SubType>Designer</SubType>
-    </Content>
-    <None Include="web.Debug.config">
-      <DependentUpon>web.config</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="web.Release.config">
-      <DependentUpon>web.config</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="HomePage\bin\qingjia_WeChat.dll" />

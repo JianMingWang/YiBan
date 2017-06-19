@@ -29,29 +29,47 @@ namespace web
 
         protected void userInfoButton_Click(object sender, EventArgs e)
         {
-            string userInfoData = GetUserInfo("https://openapi.yiban.cn/user/me");
-            string srcString = userInfoData.ToString();
-            srcString += "  ";
+            string srcString = "";
 
-            var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
-            UserInfo obj = serializer.Deserialize<UserInfo>(srcString);
-            srcString += "账号ID：" + obj.yb_userid;
-            srcString += "姓名：" + obj.yb_username;
-            srcString += "学校姓名：" + obj.yb_schoolname;
+            //if (SendMessage("8230951", "易班消息接口测试！"))
+            //{
+            //    srcString += "消息发送成功！   ";
+            //}
+            //else
+            //{
+            //    srcString += "消息发送失败！   ";
+            //}
+
+            UserMe userInfoData = GetUserInfo("https://openapi.yiban.cn/user/me");
+
+
+            srcString += "账号ID：" + userInfoData.info.yb_userid;
+            srcString += "姓名：" + userInfoData.info.yb_username;
+            srcString += "学校姓名：" + userInfoData.info.yb_schoolname;
 
             userInfo.Text = srcString;
         }
 
-        protected string GetUserInfo(string url)
+        protected bool SendMessage(string to_yb_uid, string content)
         {
             //WebClient 发送 Post请求
-            //string access_token = Session["Access_Token"].ToString();
+            //string access_token = Session["Access_Token"].ToString();//Access_Token存储在Session中
+            string access_token = "baec2ddea348da3d6bb0db5998646b98a314e3dd";
+            MsgApi msgAPI = new MsgApi(access_token);
+
+            return msgAPI.SendMsg(to_yb_uid, content);
+        }
+
+        protected UserMe GetUserInfo(string url)
+        {
+            //WebClient 发送 Post请求
+            //string access_token = Session["Access_Token"].ToString();//Access_Token存储在Session中
             string access_token = "baec2ddea348da3d6bb0db5998646b98a314e3dd";
 
             UserApi userAPI = new UserApi(access_token);
             UserMe meInfo = userAPI.GetMe();
 
-            return null;
+            return meInfo;
         }
     }
 
