@@ -1,0 +1,20 @@
+﻿<h2>hello word!</h2>
+<br />
+我的腾讯微博：
+<br />
+<a href="http://t.qq.com/djk8888" target="_blank">
+    <img src="http://t1.qlogo.cn/mbloghead/454f97d1f1c490b1e5ee/180" />
+</a>
+<br />
+<a href="http://t.qq.com/djk8888" target="_blank">http://t.qq.com/djk8888</a>
+<br /><br />
+①生成sign参数值，请调用API: api/Merchant/?merchant=baidu  ；
+POST参数：{"id":"1"}；
+输出参数&token的MD5值，值为：<font color="red">1b767e499f91606f80380394f994c3</font>
+<br />
+<img src="~/Images/1.png" />
+<br /><br />
+    ②调用API接口地址： api/Values/GetUserInfoByUserID?merchant=baidu&version=1.0.0&sign=1b767e499f91606f80380394f994c3
+<br />此处的：<font color="red">sign=1b767e499f91606f80380394f994c3</font> 就是①里面的值
+<br />
+<img src="~/Images/2.png" />

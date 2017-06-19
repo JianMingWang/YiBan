@@ -77,3 +77,6 @@ d:\用户目录\我的文档\visual studio 2015\Projects\WebAPI\WebAPI\obj\Debug
 d:\用户目录\我的文档\visual studio 2015\Projects\WebAPI\WebAPI\obj\Debug\WebAPI.pdb
 d:\用户目录\我的文档\visual studio 2015\Projects\WebAPI\WebAPI\bin\Models.dll
 d:\用户目录\我的文档\visual studio 2015\Projects\WebAPI\WebAPI\bin\Models.pdb
+C:\Users\Wong Jianming\Desktop\YiBan\API\WebAPI\WebAPI\obj\Debug\WebAPI.csprojResolveAssemblyReference.cache
+C:\Users\Wong Jianming\Desktop\YiBan\API\WebAPI\WebAPI\obj\Debug\WebAPI.dll
+C:\Users\Wong Jianming\Desktop\YiBan\API\WebAPI\WebAPI\obj\Debug\WebAPI.pdb

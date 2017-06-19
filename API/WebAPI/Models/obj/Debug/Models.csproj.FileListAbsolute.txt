@@ -3,3 +3,6 @@ D:\用户目录\我的文档\Visual Studio 2015\Projects\WebAPI\Models\bin\Debug
 D:\用户目录\我的文档\Visual Studio 2015\Projects\WebAPI\Models\obj\Debug\Models.csprojResolveAssemblyReference.cache
 D:\用户目录\我的文档\Visual Studio 2015\Projects\WebAPI\Models\obj\Debug\Models.dll
 D:\用户目录\我的文档\Visual Studio 2015\Projects\WebAPI\Models\obj\Debug\Models.pdb
+C:\Users\Wong Jianming\Desktop\YiBan\API\WebAPI\Models\obj\Debug\Models.csprojResolveAssemblyReference.cache
+C:\Users\Wong Jianming\Desktop\YiBan\API\WebAPI\Models\obj\Debug\Models.dll
+C:\Users\Wong Jianming\Desktop\YiBan\API\WebAPI\Models\obj\Debug\Models.pdb

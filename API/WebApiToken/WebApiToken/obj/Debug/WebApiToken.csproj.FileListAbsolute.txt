@@ -1,0 +1,175 @@
+D:\temp\20161107\WebApiToken\WebApiToken\bin\WebApiToken.dll.config
+D:\temp\20161107\WebApiToken\WebApiToken\bin\WebApiToken.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\WebApiToken.pdb
+D:\temp\20161107\WebApiToken\WebApiToken\bin\Antlr3.Runtime.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\EntityFramework.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\Microsoft.Data.Edm.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\Microsoft.Data.OData.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\Microsoft.Web.Infrastructure.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\Newtonsoft.Json.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\System.Net.Http.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\System.Net.Http.Formatting.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\System.Net.Http.WebRequest.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\System.Spatial.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\System.Web.Helpers.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\System.Web.Http.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\System.Web.Http.OData.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\System.Web.Http.Tracing.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\System.Web.Http.WebHost.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\System.Web.Mvc.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\System.Web.Optimization.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\System.Web.Providers.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\System.Web.Razor.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\System.Web.WebPages.Deployment.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\System.Web.WebPages.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\System.Web.WebPages.Razor.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\WebGrease.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\EntityFramework.xml
+D:\temp\20161107\WebApiToken\WebApiToken\bin\Newtonsoft.Json.xml
+D:\temp\20161107\WebApiToken\WebApiToken\bin\System.Net.Http.xml
+D:\temp\20161107\WebApiToken\WebApiToken\bin\System.Net.Http.Formatting.xml
+D:\temp\20161107\WebApiToken\WebApiToken\bin\System.Net.Http.WebRequest.xml
+D:\temp\20161107\WebApiToken\WebApiToken\bin\System.Web.Helpers.xml
+D:\temp\20161107\WebApiToken\WebApiToken\bin\System.Web.Http.xml
+D:\temp\20161107\WebApiToken\WebApiToken\bin\System.Web.Http.WebHost.xml
+D:\temp\20161107\WebApiToken\WebApiToken\bin\System.Web.Mvc.xml
+D:\temp\20161107\WebApiToken\WebApiToken\bin\System.Web.Razor.xml
+D:\temp\20161107\WebApiToken\WebApiToken\bin\System.Web.WebPages.xml
+D:\temp\20161107\WebApiToken\WebApiToken\bin\System.Web.WebPages.Deployment.xml
+D:\temp\20161107\WebApiToken\WebApiToken\bin\System.Web.WebPages.Razor.xml
+D:\temp\20161107\WebApiToken\WebApiToken\bin\System.Web.Http.Tracing.xml
+D:\temp\20161107\WebApiToken\WebApiToken\bin\System.Web.Http.OData.xml
+D:\temp\20161107\WebApiToken\WebApiToken\bin\Microsoft.Data.Edm.xml
+D:\temp\20161107\WebApiToken\WebApiToken\bin\Microsoft.Data.OData.xml
+D:\temp\20161107\WebApiToken\WebApiToken\bin\System.Spatial.xml
+D:\temp\20161107\WebApiToken\WebApiToken\bin\zh-Hans\EntityFramework.resources.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\zh-Hans\System.Net.Http.resources.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\zh-Hans\System.Net.Http.Formatting.resources.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\zh-Hans\System.Net.Http.WebRequest.resources.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\zh-Hans\System.Web.Helpers.resources.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\zh-Hans\System.Web.Http.resources.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\zh-Hans\System.Web.Http.WebHost.resources.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\zh-Hans\System.Web.Mvc.resources.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\zh-Hans\System.Web.Optimization.resources.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\zh-Hans\System.Web.Providers.resources.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\zh-Hans\System.Web.Razor.resources.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\zh-Hans\System.Web.WebPages.resources.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\zh-Hans\System.Web.Http.Tracing.resources.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\zh-Hans\System.Web.Http.OData.resources.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\de\Microsoft.Data.Edm.resources.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\es\Microsoft.Data.Edm.resources.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\fr\Microsoft.Data.Edm.resources.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\it\Microsoft.Data.Edm.resources.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\ja\Microsoft.Data.Edm.resources.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\ko\Microsoft.Data.Edm.resources.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\ru\Microsoft.Data.Edm.resources.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\de\Microsoft.Data.OData.resources.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\es\Microsoft.Data.OData.resources.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\fr\Microsoft.Data.OData.resources.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\it\Microsoft.Data.OData.resources.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\ja\Microsoft.Data.OData.resources.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\ko\Microsoft.Data.OData.resources.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\ru\Microsoft.Data.OData.resources.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\de\System.Spatial.resources.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\es\System.Spatial.resources.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\fr\System.Spatial.resources.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\it\System.Spatial.resources.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\ja\System.Spatial.resources.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\ko\System.Spatial.resources.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\ru\System.Spatial.resources.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\zh-Hans\System.Spatial.resources.dll
+D:\temp\20161107\WebApiToken\WebApiToken\bin\zh-Hant\System.Spatial.resources.dll
+D:\temp\20161107\WebApiToken\WebApiToken\obj\Debug\WebApiToken.csprojResolveAssemblyReference.cache
+D:\temp\20161107\WebApiToken\WebApiToken\obj\Debug\WebApiToken.dll
+D:\temp\20161107\WebApiToken\WebApiToken\obj\Debug\WebApiToken.pdb
+D:\temp\20161107\WebApiToken\WebApiToken\bin\Dos.Common.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\WebApiToken.dll.config
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\WebApiToken.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\WebApiToken.pdb
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\Antlr3.Runtime.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\Dos.Common.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\EntityFramework.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\Microsoft.Data.Edm.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\Microsoft.Data.OData.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\Newtonsoft.Json.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\System.Net.Http.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\System.Net.Http.WebRequest.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\System.Spatial.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\System.Web.Helpers.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\System.Web.Http.OData.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\System.Web.Http.Tracing.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\System.Web.Mvc.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\System.Web.Optimization.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\System.Web.Providers.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\System.Web.Razor.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\System.Web.WebPages.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\System.Web.WebPages.Razor.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\WebGrease.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\EntityFramework.xml
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\Newtonsoft.Json.xml
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\System.Net.Http.xml
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\System.Net.Http.WebRequest.xml
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\System.Web.Helpers.xml
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\System.Web.Mvc.xml
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\System.Web.Razor.xml
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\System.Web.WebPages.xml
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\System.Web.WebPages.Razor.xml
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\System.Web.Http.Tracing.xml
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\System.Web.Http.OData.xml
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\Microsoft.Data.Edm.xml
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\Microsoft.Data.OData.xml
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\System.Spatial.xml
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\zh-Hans\EntityFramework.resources.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\zh-Hans\System.Net.Http.resources.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\zh-Hans\System.Net.Http.WebRequest.resources.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\zh-Hans\System.Web.Helpers.resources.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\zh-Hans\System.Web.Mvc.resources.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\zh-Hans\System.Web.Optimization.resources.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\zh-Hans\System.Web.Providers.resources.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\zh-Hans\System.Web.Razor.resources.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\zh-Hans\System.Web.WebPages.resources.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\zh-Hans\System.Web.Http.Tracing.resources.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\zh-Hans\System.Web.Http.OData.resources.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\de\Microsoft.Data.Edm.resources.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\es\Microsoft.Data.Edm.resources.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\fr\Microsoft.Data.Edm.resources.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\it\Microsoft.Data.Edm.resources.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\ja\Microsoft.Data.Edm.resources.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\ko\Microsoft.Data.Edm.resources.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\ru\Microsoft.Data.Edm.resources.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\de\Microsoft.Data.OData.resources.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\es\Microsoft.Data.OData.resources.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\fr\Microsoft.Data.OData.resources.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\it\Microsoft.Data.OData.resources.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\ja\Microsoft.Data.OData.resources.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\ko\Microsoft.Data.OData.resources.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\ru\Microsoft.Data.OData.resources.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\de\System.Spatial.resources.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\es\System.Spatial.resources.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\fr\System.Spatial.resources.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\it\System.Spatial.resources.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\ja\System.Spatial.resources.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\ko\System.Spatial.resources.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\ru\System.Spatial.resources.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\zh-Hans\System.Spatial.resources.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\bin\zh-Hant\System.Spatial.resources.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\obj\Debug\WebApiToken.csprojResolveAssemblyReference.cache
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\obj\Debug\WebApiToken.dll
+C:\Users\Wong Jianming\Downloads\WebApiToken\WebApiToken\obj\Debug\WebApiToken.pdb

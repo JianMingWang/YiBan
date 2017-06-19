@@ -103,6 +103,5 @@ namespace YbSDK.Api
             return new YbException(errorInfo, errorInfo.info.msgCN);
         }
 
-        
     }
 }
