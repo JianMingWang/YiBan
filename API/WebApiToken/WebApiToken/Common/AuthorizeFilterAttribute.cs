@@ -12,6 +12,9 @@ using System.Web.Http.Filters;
 namespace WebApiToken.Common
 {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
+    //AttributeTargets.Class  代表 Authorize特性应放在类前面
+    //AttributeTargets.Method 代表 Authorize特性应放在方法前面
+    //AllowMultiple 代表特性是否可以被重复放置多次   true表示可以重复放置
     public class AuthorizeFilterAttribute : ActionFilterAttribute
     {
         private static Dictionary<HttpMethod, Method> authorizeMethod;
