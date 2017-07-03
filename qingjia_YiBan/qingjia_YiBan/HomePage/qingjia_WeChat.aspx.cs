@@ -7,6 +7,7 @@ using qingjia_YiBan.HomePage.Class;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.HtmlControls;
+using qingjia_YiBan.HomePage.Model;
 
 namespace qingjia_YiBan.HomePage
 {
@@ -22,6 +23,27 @@ namespace qingjia_YiBan.HomePage
 
         private void LoadDB()
         {
+            //易班授权后跳转
+            YB_AccessToken YB = new YB_AccessToken();
+            if (Request.QueryString["access_token"] != null && Request.QueryString["userid"] != null && Request.QueryString["expires"] != null)
+            {
+                string userID = Request.QueryString["userid"].ToString();
+                string YB_AccessToken = Request.QueryString["access_token"].ToString();
+
+                //获取到用户ID  AccessToken
+                Client<qingjia_AccessToken> client = new Client<qingjia_AccessToken>();
+                ApiResult<qingjia_AccessToken> result = client.GetRequest("YiBanID=" + userID, "/api/oauth/access_token");
+            }
+            else
+            {
+                //测试使用
+                Client<qingjia_AccessToken> client = new Client<qingjia_AccessToken>();
+                ApiResult<qingjia_AccessToken> result = client.GetRequest("YiBanID=" + "123", "/api/oauth/access_token");
+                qingjia_AccessToken qingjia_at = result.data;
+
+                client = new Client<qingjia_AccessToken>();
+            }
+
             //string ST_NUM = "0121403490106";
             string ST_NUM = Session["ST_Num"].ToString();
 

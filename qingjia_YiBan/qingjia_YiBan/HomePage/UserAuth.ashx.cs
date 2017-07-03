@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Text;
+
 
 namespace qingjia_YiBan.HomePage
 {
@@ -13,53 +15,39 @@ namespace qingjia_YiBan.HomePage
 
         public void ProcessRequest(HttpContext context)
         {
-            var appid = "wxd66dc84bc3f5e793";//学工广场
-            var secret = "9e20112513fdff5b69251ee70c690d5f";//学工广场
+            var appid = "d75b391ef6abcbfa";
+            var secret = "cd05598f3486167f53a38da21c125e04";
 
-            // context.Session["pageCate"] = pageCate;
-
-            var code = context.Request.QueryString["code"];
-            var state = context.Request.QueryString["state"];
+            var code = context.Request.QueryString["code"];//code授权码
+            var state = context.Request.QueryString["state"];//state防止拦截攻击
 
             if (string.IsNullOrEmpty(code))
             {
-                var url = string.Format("https://open.weixin.qq.com/connect/oauth2/authorize?appid={0}&redirect_uri=http%3a%2f%2fwww.zhanglidaoyan.com&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect", appid);
+                var url = string.Format("https://openapi.yiban.cn/oauth/authorize?client_id={0}&redirect_uri=http%3a%2f%2fzhanglidaoyan.com&state=STATE", appid);
                 context.Response.Redirect(url);
             }
-
-
             else
             {
-                var client = new System.Net.WebClient();
-                client.Encoding = System.Text.Encoding.UTF8;
- 
-                var url = string.Format("https://api.weixin.qq.com/sns/oauth2/access_token?appid={0}&secret={1}&code={2}&grant_type=authorization_code", appid, secret, code);
-                var data = client.DownloadString(url);
+                //WebClient 发送 Post请求
+                string postString = "client_id=" + appid + "&client_secret=" + secret + "&code=" + code + "&redirect_uri=" + "http://zhanglidaoyan.com";
+                byte[] postData = Encoding.UTF8.GetBytes(postString);//将字符串转换为UTF-8编码
+                string url = "https://openapi.yiban.cn/oauth/access_token";
+                System.Net.WebClient webclient = new System.Net.WebClient();
+                webclient.Headers.Add("Content-Type", "application/x-www-form-urlencoded");//POST 请求在头部必须添加
+                byte[] responseData = webclient.UploadData(url, "POST", postData);//发起POST请求、返回byte字节
+                string srcString = Encoding.UTF8.GetString(responseData);//将byte字节转换为字符串
 
-                var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
-				
-				//反序列化  将json转换成键值对
-                var obj = serializer.Deserialize<Dictionary<string, string>>(data);
-				
-				//通过关键字来获取值
-                string accessToken;
-                if (!obj.TryGetValue("access_token", out accessToken))
-                    return;
+                var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();//解析JSON数据
+                JsonModel obj = serializer.Deserialize<JsonModel>(srcString);
 
-                var opentid = obj["openid"];
-
-                if (opentid != null && opentid != "")
+                if (obj != null)
                 {
-                    context.Response.Redirect("./SubPage/bind.aspx?openId=" + opentid);
+                    context.Response.Redirect("qingjia_WeChat.aspx?access_token=" + obj.access_token + "&userid=" + obj.userid + "&expires=" + obj.expires + "&data=" + srcString.ToString());//获取成功后
                 }
-                //if (state.Equals("1"))
-                //{
-                //    context.Response.Redirect("qingjia_WeChat.aspx?openId=" + opentid);
-                //}
-                //else if (state.Equals("0"))
-                //{
-                //    context.Response.Redirect("qingjia_WeChat.aspx?openId=" + opentid);
-                //}
+                else
+                {
+                    context.Response.Redirect("error.aspx");//未获取到授权
+                }
             }
         }
 
@@ -69,6 +57,13 @@ namespace qingjia_YiBan.HomePage
             {
                 return false;
             }
+        }
+
+        public class JsonModel //获取Json数据 解析模型
+        {
+            public string access_token { get; set; }
+            public string userid { get; set; }
+            public string expires { get; set; }
         }
     }
 }

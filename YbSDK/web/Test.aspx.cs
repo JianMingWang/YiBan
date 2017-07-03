@@ -54,7 +54,7 @@ namespace web
         {
             //WebClient 发送 Post请求
             //string access_token = Session["Access_Token"].ToString();//Access_Token存储在Session中
-            string access_token = "baec2ddea348da3d6bb0db5998646b98a314e3dd";
+            string access_token = "c4af6ff158a3d4fdf7e1a309a70efda7a430511f";
             MsgApi msgAPI = new MsgApi(access_token);
 
             return msgAPI.SendMsg(to_yb_uid, content);
@@ -64,7 +64,7 @@ namespace web
         {
             //WebClient 发送 Post请求
             //string access_token = Session["Access_Token"].ToString();//Access_Token存储在Session中
-            string access_token = "baec2ddea348da3d6bb0db5998646b98a314e3dd";
+            string access_token = "c4af6ff158a3d4fdf7e1a309a70efda7a430511f";
 
             UserApi userAPI = new UserApi(access_token);
             UserMe meInfo = userAPI.GetMe();

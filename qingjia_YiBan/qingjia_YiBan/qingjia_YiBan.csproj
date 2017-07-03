@@ -151,6 +151,13 @@
     <Content Include="HomePage\SubPage\images\specialleave_detail_callroll2.png" />
     <Content Include="HomePage\SubPage\images\specialleave_detail_selfstudy1.png" />
     <Content Include="HomePage\SubPage\images\specialleave_detail_selfstudy2.png" />
+    <Content Include="web.config" />
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="HomePage\bin\qingjia_WeChat.dll" />
@@ -376,9 +383,11 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HomePage\Class\ApiResult.cs" />
     <Compile Include="HomePage\Class\DB.cs" />
     <Compile Include="HomePage\Class\LeaveList.cs" />
     <Compile Include="HomePage\Class\LL_Model.cs" />
+    <Compile Include="HomePage\Class\Client.cs" />
     <Compile Include="HomePage\Class\Student.cs" />
     <Compile Include="HomePage\obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="HomePage\obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
