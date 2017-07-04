@@ -7,7 +7,7 @@ using qingjia_YiBan.HomePage.Class;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.HtmlControls;
-using qingjia_YiBan.HomePage.Model;
+using qingjia_YiBan.HomePage.Model.API;
 
 namespace qingjia_YiBan.HomePage
 {
@@ -15,6 +15,12 @@ namespace qingjia_YiBan.HomePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                string access_token = Request.QueryString["access_token"].ToString();
+                Session["access_token"] = access_token;
+            }
+
             //获取学生基本信息
             LoadDB();
             //获取点名时间、请假截止时间
@@ -23,116 +29,124 @@ namespace qingjia_YiBan.HomePage
 
         private void LoadDB()
         {
-            //易班授权后跳转
-            YB_AccessToken YB = new YB_AccessToken();
-            if (Request.QueryString["access_token"] != null && Request.QueryString["userid"] != null && Request.QueryString["expires"] != null)
-            {
-                string userID = Request.QueryString["userid"].ToString();
-                string YB_AccessToken = Request.QueryString["access_token"].ToString();
+            //测试使用
+            //Client<qingjia_AccessToken> client = new Client<qingjia_AccessToken>();
+            //ApiResult<qingjia_AccessToken> result = client.GetRequest("YiBanID=" + "123", "/api/oauth/access_token");
+            //qingjia_AccessToken qingjia_at = result.data;
 
-                //获取到用户ID  AccessToken
-                Client<qingjia_AccessToken> client = new Client<qingjia_AccessToken>();
-                ApiResult<qingjia_AccessToken> result = client.GetRequest("YiBanID=" + userID, "/api/oauth/access_token");
-            }
-            else
-            {
-                //测试使用
-                Client<qingjia_AccessToken> client = new Client<qingjia_AccessToken>();
-                ApiResult<qingjia_AccessToken> result = client.GetRequest("YiBanID=" + "123", "/api/oauth/access_token");
-                qingjia_AccessToken qingjia_at = result.data;
+            string access_token = Session["access_token"].ToString();
+            string ST_NUM = access_token.Substring(0, access_token.IndexOf("_"));
+            Client<UserInfo> client = new Client<UserInfo>();
+            ApiResult<UserInfo> result = client.GetRequest("access_token=" + access_token, "/api/student/me");
 
-                client = new Client<qingjia_AccessToken>();
+            if (result.result == "error" || result.data == null)
+            {
+                //出现错误，获取信息失败，跳转到错误界面 尚未完成
+                Response.Redirect("Error.aspx");
+                return;
             }
 
-            //string ST_NUM = "0121403490106";
-            string ST_NUM = Session["ST_Num"].ToString();
+            UserInfo userInfo = result.data;
 
-            DB db = new DB();
-            DataSet ds_st = db.GetList("ST_Num ='" + ST_NUM + "'");
-            if (ds_st.Tables[0].Rows.Count > 0)
-            {
-                //登录信息正确，将相关信息写入cookies
-                HttpCookie cookie = new HttpCookie("UserInfo");
-                cookie.Values.Add("UserID", ds_st.Tables[0].Rows[0]["ST_Num"].ToString());
-                cookie.Values.Add("UserName", HttpUtility.UrlEncode(ds_st.Tables[0].Rows[0]["ST_Name"].ToString()));
-                cookie.Values.Add("UserClass", HttpUtility.UrlEncode(ds_st.Tables[0].Rows[0]["ST_Class"].ToString()));
-                cookie.Values.Add("UserYear", ds_st.Tables[0].Rows[0]["ST_Grade"].ToString());
-                cookie.Values.Add("UserTeacher", HttpUtility.UrlEncode(ds_st.Tables[0].Rows[0]["ST_Teacher"].ToString()));
-                cookie.Values.Add("UserTeacherID", HttpUtility.UrlEncode(ds_st.Tables[0].Rows[0]["ST_TeacherID"].ToString()));
-                cookie.Expires = DateTime.Now.AddMinutes(20);
-                Response.AppendCookie(cookie);
+            //登录信息正确，将相关信息写入cookies
+            HttpCookie cookie = new HttpCookie("UserInfo");
+            cookie.Values.Add("UserID", userInfo.UserID);
+            cookie.Values.Add("UserName", userInfo.UserName);
+            cookie.Values.Add("UserClass", userInfo.UserClass);
+            cookie.Values.Add("UserYear", userInfo.UserYear);
+            cookie.Values.Add("UserTel", userInfo.UserTel);
+            cookie.Values.Add("UserTeacher", userInfo.UserTeacherName);
+            cookie.Values.Add("UserTeacherID", userInfo.UserTeacherID);
+            cookie.Expires = DateTime.Now.AddDays(1);
+            HttpContext.Current.Response.Cookies.Add(cookie);
 
-                UpdateInfo(ds_st.Tables[0].Rows[0]["ST_Num"].ToString());
-                label_teacherName.InnerText = ds_st.Tables[0].Rows[0]["ST_Teacher"].ToString();
-                label_Year.InnerText = ds_st.Tables[0].Rows[0]["ST_Grade"].ToString();
-            }
-            else
-            {
-                ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "", "alert('用户信息不存在');", true);
-            }
+            UpdateInfo(userInfo);
+            label_teacherName.InnerText = userInfo.UserTeacherName;
+            label_Year.InnerText = userInfo.UserYear;
         }
 
         private void LoadTimeEnd()
         {
-            //从Cookie中获取值
-            string teacherID = HttpUtility.UrlDecode(Request.Cookies["UserInfo"]["UserTeacherID"].ToString());
-            DB db = new DB();
-
-            //获取晚点名请假截止时间
-            DataSet ds_te = db.GetTimeEnd(" TypeID= 2 AND TeacherID='" + teacherID + "'");
-            if (ds_te.Tables[0].Rows.Count > 0)
+            string access_token = Session["access_token"].ToString();
+            string ST_NUM = access_token.Substring(0, access_token.IndexOf("_"));
+            Client<NightInfo> client_Night = new Client<NightInfo>();
+            ApiResult<NightInfo> result_Night = client_Night.GetRequest("access_token=" + access_token, "api/student/night");
+            if (result_Night.result == "success")
             {
-                DateTime end_time_dt = (DateTime)ds_te.Tables[0].Rows[0]["Time"];
-                if (end_time_dt < DateTime.Now)//小于当前是见表示尚可请假
+                NightInfo nightInfo = result_Night.data;
+
+                //晚点名请假截止时间
+                if (nightInfo.DeadLine != null)
                 {
-                    label_EndTime.InnerText = "已过请假时间！";
+                    DateTime end_time_night = Convert.ToDateTime(nightInfo.DeadLine);
+
+                    if (end_time_night < DateTime.Now)//小于当前是见表示尚可请假
+                    {
+                        label_EndTime.InnerText = "已过请假时间！";
+                    }
+                    else
+                    {
+                        label_EndTime.InnerText = end_time_night.ToString("yyyy/MM/dd HH:mm");
+                    }
                 }
                 else
                 {
-                    label_EndTime.InnerText = ((DateTime)ds_te.Tables[0].Rows[0]["Time"]).ToString("yyyy/MM/dd HH:mm");
+                    label_EndTime.InnerText = "未设置";
                 }
-            }
-            else
-            {
-                label_EndTime.InnerText = "未设置";
-            }
 
-            //获取晚点名时间
-            DataSet ds_CallTime = db.GetCallTime(" ClassName='" + HttpUtility.UrlDecode(Request.Cookies["UserInfo"]["UserClass"].ToString()) + "'");
-            if (ds_CallTime.Tables[0].Rows.Count > 0)
-            {
-                label_CallTime.InnerText = ((DateTime)ds_CallTime.Tables[0].Rows[0][0]).ToString("yyyy/MM/dd HH:mm");
-            }
-            else
-            {
-                label_CallTime.InnerText = "未设置";
-            }
-
-            //获取节假日请假时间
-            DataSet ds_v_end_time = db.GetTimeEnd(" TypeID= 1 AND TeacherID='" + teacherID + "'");
-            if (ds_v_end_time.Tables[0].Rows.Count > 0)
-            {
-                DateTime end_time_dt = (DateTime)ds_v_end_time.Tables[0].Rows[0]["Time"];
-                if (end_time_dt < DateTime.Now)//小于当前时间表示不可请假
+                //晚点名时间
+                if (nightInfo.BatchTime != null)
                 {
-                    vacation_end_time.Value = "已过请假时间！";
+                    DateTime call_time = Convert.ToDateTime(nightInfo.BatchTime);
+                    label_CallTime.InnerText = call_time.ToString("yyyy/MM/dd HH:mm");
                 }
                 else
                 {
-                    Default_Vacation.Visible = true;
-                    vacation_end_time.Value = ((DateTime)ds_v_end_time.Tables[0].Rows[0]["Time"]).ToString("yyyy/MM/dd HH:mm");
+                    label_CallTime.InnerText = "未设置";
                 }
             }
             else
             {
-                vacation_end_time.Value = "未设置";
+                label_EndTime.InnerText = "获取数据失败！";
+                label_CallTime.InnerText = "获取数据失败！";
+            }
+
+            Client<Holiday> client_Holiday = new Client<Holiday>();
+            ApiResult<Holiday> result_Holiday = client_Holiday.GetRequest("access_token=" + access_token, "api/student/holiday");
+            if (result_Holiday.result == "success")
+            {
+                Holiday holiday = result_Holiday.data;
+
+                //节假日请假时间
+                if (holiday.DeadLine != null)
+                {
+                    DateTime end_time_holiday = Convert.ToDateTime(holiday.DeadLine);
+
+                    if (end_time_holiday < DateTime.Now)//小于当前是见表示尚可请假
+                    {
+                        vacation_end_time.Value = "已过请假时间！";
+                    }
+                    else
+                    {
+                        Default_Vacation.Visible = true;
+                        vacation_end_time.Value = end_time_holiday.ToString("yyyy/MM/dd HH:mm");
+                    }
+                }
+                else
+                {
+                    vacation_end_time.Value = "未设置";
+                }
+            }
+            else
+            {
+                vacation_end_time.Value = "获取数据失败！";
             }
         }
 
         //完善个人信息
-        private void UpdateInfo(string ST_NUM)
+        private void UpdateInfo(UserInfo userInfo)
         {
-            if (DB.InfoCheck(ST_NUM) == false)
+            if (DB.InfoCheck(userInfo) == false)
             {
                 Response.Redirect("./SubPage/info_detail.aspx");
             }

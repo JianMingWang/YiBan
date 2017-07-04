@@ -8,6 +8,7 @@ using System.Web.UI.HtmlControls;
 using qingjia_YiBan.HomePage.Class;
 using System.Data;
 using System.Data.SqlClient;
+using qingjia_YiBan.HomePage.Model.API;
 
 namespace qingjia_YiBan.SubPage
 {
@@ -24,35 +25,41 @@ namespace qingjia_YiBan.SubPage
         //加载个人信息
         private void LoadDB()
         {
-            string ST_NUM = Request.Cookies["UserInfo"]["UserID"].ToString();
-
-            DB dbInfo = new DB();
-            DataSet dsInfo = dbInfo.GetList("ST_Num='" + ST_NUM + "'");
-            DataTable dtSource = dsInfo.Tables[0];
-
-            if (dtSource.Rows.Count > 0)
+            string access_token = Session["access_token"].ToString();
+            string ST_NUM = access_token.Substring(0, access_token.IndexOf("_"));
+            Client<UserInfo> client = new Client<UserInfo>();
+            ApiResult<UserInfo> result = client.GetRequest("access_token=" + access_token, "/api/student/me");
+            if (result.result == "error" || result.data == null)
             {
-                Label_Num.InnerText = dtSource.Rows[0]["ST_Num"].ToString();
-                Label_Name.InnerText = dtSource.Rows[0]["ST_Name"].ToString();
-                Label_Sex.InnerText = dtSource.Rows[0]["ST_Sex"].ToString();
-                Label_Class.InnerText = dtSource.Rows[0]["ST_Class"].ToString();
-                txtTel.Value = dtSource.Rows[0]["ST_Tel"].ToString();
-                txtQQ.Value = dtSource.Rows[0]["ST_QQ"].ToString();
-                if (dtSource.Rows[0]["ContactOne"].ToString() != "" && dtSource.Rows[0]["OneTel"].ToString() != "" && dtSource.Rows[0]["ST_Tel"].ToString() != "" && dtSource.Rows[0]["ST_QQ"].ToString() != "")
-                {
-                    txtGuardianName.Value = dtSource.Rows[0]["ContactOne"].ToString();
-                    txtGuardianNum.Value = dtSource.Rows[0]["OneTel"].ToString();
-                }
-                else
-                {
-                    txtError.Value = "首次登陆需请填写个人信息！";
-                    txtGuardianName.Value = "";
-                    txtGuardianNum.Value = "";
-                }
+                //出现错误，获取信息失败，跳转到错误界面 尚未完成
+                Response.Redirect("Error.aspx");
+                return;
+            }
+
+            UserInfo userInfo = result.data;
+
+            //string ST_NUM = Request.Cookies["UserInfo"]["UserID"].ToString();
+
+            //DB dbInfo = new DB();
+            //DataSet dsInfo = dbInfo.GetList("ST_Num='" + ST_NUM + "'");
+            //DataTable dtSource = dsInfo.Tables[0];
+
+            Label_Num.InnerText = userInfo.UserID;
+            Label_Name.InnerText = userInfo.UserName;
+            Label_Sex.InnerText = userInfo.UserSex;
+            Label_Class.InnerText = userInfo.UserClass;
+            txtTel.Value = userInfo.UserTel;
+            txtQQ.Value = userInfo.UserQQ;
+            if (userInfo.ContactName != "" && userInfo.ContactTel != "" && userInfo.UserTel != "" && userInfo.UserQQ != "")
+            {
+                txtGuardianName.Value = userInfo.ContactName;
+                txtGuardianNum.Value = userInfo.ContactTel;
             }
             else
             {
-                txtError.Value = "未查找到相关信息！";
+                txtError.Value = "首次登陆需请填写个人信息！";
+                txtGuardianName.Value = "";
+                txtGuardianNum.Value = "";
             }
         }
 
@@ -61,9 +68,9 @@ namespace qingjia_YiBan.SubPage
         {
             if (Check())
             {
-                string ST_NUM = Request.Cookies["UserInfo"]["UserID"].ToString();
-                DB.UpdateStuInfo(ST_NUM, txtTel.Value.ToString().Trim(), txtQQ.Value.ToString().Trim(), txtGuardianName.Value.ToString().Trim(), txtGuardianNum.Value.ToString().Trim());
-                Response.Redirect("info_succeed.aspx");
+                //string ST_NUM = Request.Cookies["UserInfo"]["UserID"].ToString();
+                //DB.UpdateStuInfo(ST_NUM, txtTel.Value.ToString().Trim(), txtQQ.Value.ToString().Trim(), txtGuardianName.Value.ToString().Trim(), txtGuardianNum.Value.ToString().Trim());
+                //Response.Redirect("info_succeed.aspx");
             }
         }
 

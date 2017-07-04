@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace qingjia_YiBan.HomePage.Model
+namespace qingjia_YiBan.HomePage.Model.API
 {
     public class YB_AccessToken //获取Json数据 解析模型
     {

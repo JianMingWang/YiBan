@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Text;
 using System.Configuration;
+using qingjia_YiBan.HomePage.Model.API;
 
 namespace qingjia_YiBan.HomePage.Class
 {
@@ -157,27 +158,9 @@ namespace qingjia_YiBan.HomePage.Class
         /// </summary>
         /// <param name="ST_NUM"></param>
         /// <returns></returns>
-        static public bool InfoCheck(string ST_NUM)
+        static public bool InfoCheck(UserInfo userInfo)
         {
-            DataSet ds = new DataSet();
-            string connString = ConfigurationManager.AppSettings["ConnectionString"];
-
-            using (SqlConnection conn = new SqlConnection(connString))
-            {
-                conn.Open();
-                StringBuilder strSql = new StringBuilder();
-                strSql.Append("select ContactOne,OneTel ");
-                strSql.Append(" FROM T_Student ");
-                if (ST_NUM.Trim() != "")
-                {
-                    strSql.Append(" where ID ='" + ST_NUM + "'");
-                }
-                using (SqlDataAdapter da = new SqlDataAdapter(strSql.ToString(), conn))
-                {
-                    da.Fill(ds);
-                }
-            }
-            if (ds.Tables[0].Rows[0]["ContactOne"].ToString() == "" || ds.Tables[0].Rows[0]["ContactOne"].ToString() == null || ds.Tables[0].Rows[0]["OneTel"].ToString() == "" || ds.Tables[0].Rows[0]["OneTel"].ToString() == null)
+            if (userInfo.ContactName == "" || userInfo.ContactTel == "")
             {
                 return false;
             }

@@ -13,11 +13,11 @@ namespace qingjia_YiBan.SubPage
         protected void Page_Load(object sender, EventArgs e)
         {
             string LV_NUM = Request.QueryString["LV_NUM"].ToString();
-            if (!LeaveList.Delete_leaveList(" ID= " + LV_NUM ))
-            {
-                Response.Redirect("form_notaudited.aspx");
-            }
-        }
+            string access_token = Session["access_token"].ToString();
 
+            Client<string> client = new Client<string>();
+            ApiResult<string> result = client.GetRequest("leavelistID=" + LV_NUM + "&access_token=" + access_token, "/api/leavelist/revoke");
+            Response.Redirect("form_notaudited.aspx");
+        }
     }
 }

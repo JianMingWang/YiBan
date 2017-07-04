@@ -59,3 +59,4 @@ C:\Users\Wong Jianming\Desktop\YiBan\qingjia_YiBan\qingjia_YiBan\bin\System.Xml.
 C:\Users\Wong Jianming\Desktop\YiBan\qingjia_YiBan\qingjia_YiBan\obj\Debug\qingjia_YiBan.dll
 C:\Users\Wong Jianming\Desktop\YiBan\qingjia_YiBan\qingjia_YiBan\obj\Debug\qingjia_YiBan.pdb
 C:\Users\Wong Jianming\Desktop\YiBan\qingjia_YiBan\qingjia_YiBan\bin\qingjia_YiBan.dll.config
+C:\Users\Wong Jianming\Desktop\YiBan\qingjia_YiBan\qingjia_YiBan\obj\Debug\qingjia_YiBan.csprojResolveAssemblyReference.cache

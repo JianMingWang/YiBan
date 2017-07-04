@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.HtmlControls;
 using System.Data;
 using qingjia_YiBan.HomePage.Class;
+using qingjia_YiBan.HomePage.Model.API;
 
 namespace qingjia_YiBan.SubPage
 {
@@ -22,20 +23,43 @@ namespace qingjia_YiBan.SubPage
 
         private void LoadDB()
         {
-            string ST_NUM = Request.Cookies["UserInfo"]["UserID"].ToString();
-
-            string strWHere = " StudentID = '" + ST_NUM + "' and StateLeave ='0' and StateBack='0'";
-            DataSet ds = LeaveList.GetList3(strWHere);
-            DataTable dtSource = ds.Tables[0];
-            for (int i = 0; i < dtSource.Rows.Count; i++)
+            string access_token = Session["access_token"].ToString();
+            Client<List<LeaveList>> client = new Client<List<LeaveList>>();
+            ApiResult<List<LeaveList>> result = client.GetRequest("access_token=" + access_token, "/api/leavelist/getlist");
+            if (result.result == "success")
             {
-                string LV_NUM = dtSource.Rows[i]["ID"].ToString();
-                string LeaveType = DB.getKey("LeaveType", dtSource.Rows[i]["TypeChildID"].ToString());
-                string go_time = dtSource.Rows[i]["TimeLeave"].ToString();
-                string back_time = dtSource.Rows[i]["TimeBack"].ToString();
-                leave_list_div.Controls.Add(CreatLeaveList(LV_NUM, LeaveType, go_time, back_time));
-                leave_list_div.Controls.Add(CreatBr());
+                if (result.data != null)
+                {
+                    List<LeaveList> list = result.data;
+                    foreach (LeaveList item in list)
+                    {
+                        if (item.State == "待审核")
+                        {
+                            string LV_NUM = item.ID;
+                            string LeaveType = item.Type;
+                            string go_time = item.TimeBack.ToString("yyyy-MM-dd HH:MM:ss");
+                            string back_time = item.SubmitTime;
+                            leave_list_div.Controls.Add(CreatLeaveList(LV_NUM, LeaveType, go_time, back_time));
+                            leave_list_div.Controls.Add(CreatBr());
+                        }
+                    }
+                }
             }
+
+            //string ST_NUM = Request.Cookies["UserInfo"]["UserID"].ToString();
+
+            //string strWHere = " StudentID = '" + ST_NUM + "' and StateLeave ='0' and StateBack='0'";
+            //DataSet ds = LeaveList.GetList3(strWHere);
+            //DataTable dtSource = ds.Tables[0];
+            //for (int i = 0; i < dtSource.Rows.Count; i++)
+            //{
+            //    string LV_NUM = dtSource.Rows[i]["ID"].ToString();
+            //    string LeaveType = DB.getKey("LeaveType", dtSource.Rows[i]["TypeChildID"].ToString());
+            //    string go_time = dtSource.Rows[i]["TimeLeave"].ToString();
+            //    string back_time = dtSource.Rows[i]["TimeBack"].ToString();
+            //    leave_list_div.Controls.Add(CreatLeaveList(LV_NUM, LeaveType, go_time, back_time));
+            //    leave_list_div.Controls.Add(CreatBr());
+            //}
         }
 
         /// <summary>
@@ -156,7 +180,7 @@ namespace qingjia_YiBan.SubPage
         /// <param name="cssClass"></param>
         /// <param name="style"></param>
         /// <returns></returns>
-        private HtmlGenericControl CreatText(string id, string cssClass, string style,string Value)
+        private HtmlGenericControl CreatText(string id, string cssClass, string style, string Value)
         {
             HtmlGenericControl Creat_Text = new HtmlGenericControl("input");
             //Creat_Text.Attributes.Add("id", id);
@@ -194,7 +218,7 @@ namespace qingjia_YiBan.SubPage
         /// <param name="Value"></param>
         /// <param name="clickEvent"></param>
         /// <returns></returns>
-        private HtmlGenericControl CreatSubmit(string id, string cssClass, string Value,string href)
+        private HtmlGenericControl CreatSubmit(string id, string cssClass, string Value, string href)
         {
             HtmlGenericControl Creat_Submit = new HtmlGenericControl("a");
             //Creat_Submit.Attributes.Add("id", id);

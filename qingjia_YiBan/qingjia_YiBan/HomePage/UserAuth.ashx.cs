@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Text;
+using qingjia_YiBan.HomePage.Class;
+using qingjia_YiBan.HomePage.Model.API;
 
 
 namespace qingjia_YiBan.HomePage
@@ -42,11 +44,25 @@ namespace qingjia_YiBan.HomePage
 
                 if (obj != null)
                 {
-                    context.Response.Redirect("qingjia_WeChat.aspx?access_token=" + obj.access_token + "&userid=" + obj.userid + "&expires=" + obj.expires + "&data=" + srcString.ToString());//获取成功后
+                    //获取到用户ID  AccessToken
+                    Client<qingjia_AccessToken> client = new Client<qingjia_AccessToken>();
+                    ApiResult<qingjia_AccessToken> result = client.GetRequest("YiBanID=" + obj.userid, "/api/oauth/access_token");
+
+                    if (result.result == "success" || result.data != null)
+                    {
+                        //获取授权
+                        context.Response.Redirect("qingjia_WeChat.aspx?access_token=" + result.data.access_token);
+                    }
+                    else
+                    {
+                        //qingjia 授权失败 跳转到绑定页面
+                        context.Response.Redirect("./SubPage/bind.aspx?YiBanID=" + obj.userid);
+                    }
                 }
                 else
                 {
-                    context.Response.Redirect("error.aspx");//未获取到授权
+                    //未获取到易班授权授权 跳转到错误页面
+                    context.Response.Redirect("Error.aspx");
                 }
             }
         }
