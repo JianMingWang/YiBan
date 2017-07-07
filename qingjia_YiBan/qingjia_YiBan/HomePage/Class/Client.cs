@@ -58,6 +58,7 @@ namespace qingjia_YiBan.HomePage.Class
             //将字符串转换为UTF-8编码
             byte[] postData = Encoding.UTF8.GetBytes(_postString);
 
+            //利用URL传值
             url = url + _url + "?" + _postString;
 
             string response = client.DownloadString(url);
