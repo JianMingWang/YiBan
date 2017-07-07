@@ -25,24 +25,20 @@ namespace qingjia_YiBan.SubPage
         //加载个人信息
         private void LoadDB()
         {
+            Response.Redirect("Error.aspx");
+            return;
+
             string access_token = Session["access_token"].ToString();
             string ST_NUM = access_token.Substring(0, access_token.IndexOf("_"));
             Client<UserInfo> client = new Client<UserInfo>();
             ApiResult<UserInfo> result = client.GetRequest("access_token=" + access_token, "/api/student/me");
             if (result.result == "error" || result.data == null)
             {
-                //出现错误，获取信息失败，跳转到错误界面 尚未完成
                 Response.Redirect("Error.aspx");
                 return;
             }
 
             UserInfo userInfo = result.data;
-
-            //string ST_NUM = Request.Cookies["UserInfo"]["UserID"].ToString();
-
-            //DB dbInfo = new DB();
-            //DataSet dsInfo = dbInfo.GetList("ST_Num='" + ST_NUM + "'");
-            //DataTable dtSource = dsInfo.Tables[0];
 
             Label_Num.InnerText = userInfo.UserID;
             Label_Name.InnerText = userInfo.UserName;
@@ -66,11 +62,29 @@ namespace qingjia_YiBan.SubPage
         //更新个人信息
         protected void btnSubmit_ServerClick(object sender, EventArgs e)
         {
+            string access_token = Session["access_token"].ToString();
+
             if (Check())
             {
-                //string ST_NUM = Request.Cookies["UserInfo"]["UserID"].ToString();
-                //DB.UpdateStuInfo(ST_NUM, txtTel.Value.ToString().Trim(), txtQQ.Value.ToString().Trim(), txtGuardianName.Value.ToString().Trim(), txtGuardianNum.Value.ToString().Trim());
-                //Response.Redirect("info_succeed.aspx");
+                string ST_Tel = txtTel.Value;
+                string ST_QQ = txtQQ.Value;
+                string Guardian = txtGuardianName.Value.ToString().Trim();
+                string ST_Guardian = Guardian.Substring(0, 2);
+                string ST_GuardianName = Guardian.Substring(3, ST_Guardian.Length - 3);
+                string ST_GuardianTel = txtGuardianNum.Value;
+
+                Client<string> client = new Client<string>();
+                string _postString = String.Format("access_token={0}&ST_Tel={1}&ST_QQ={2}&ST_Guardian={3}&ST_GuardianName={4}&ST_GuardianTel={5}", access_token, ST_Tel, ST_QQ, ST_Guardian, ST_GuardianName, ST_GuardianTel);
+                ApiResult<string> result = client.PostRequest(_postString, "/api/student/changeinfo");
+
+                if (result.result == "success")
+                {
+                    Response.Redirect("info_succeed.aspx");
+                }
+                else
+                {
+                    txtError.Value = result.messages;
+                }
             }
         }
 
@@ -132,7 +146,5 @@ namespace qingjia_YiBan.SubPage
                 return true;
             }
         }
-
-
     }
 }
