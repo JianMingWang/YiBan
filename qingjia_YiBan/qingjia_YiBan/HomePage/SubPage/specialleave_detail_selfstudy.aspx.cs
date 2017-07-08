@@ -8,6 +8,7 @@ using System.Web.UI.HtmlControls;
 using qingjia_YiBan.HomePage.Class;
 using System.Data;
 using System.Data.SqlClient;
+using qingjia_YiBan.HomePage.Model.API;
 
 namespace qingjia_YiBan.SubPage
 {
@@ -15,6 +16,7 @@ namespace qingjia_YiBan.SubPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //验证是否包含早晚自习请假
             if (CheckYear())
             {
                 LoadDB();
@@ -28,17 +30,25 @@ namespace qingjia_YiBan.SubPage
 
         private void LoadDB()
         {
-            string ST_NUM = Request.Cookies["UserInfo"]["UserID"].ToString();
+            //从API接口获取数据
+            string access_token = Session["access_token"].ToString();
+            string ST_NUM = access_token.Substring(0, access_token.IndexOf("_"));
+            Client<UserInfo> client = new Client<UserInfo>();
+            ApiResult<UserInfo> result = client.GetRequest("access_token=" + access_token, "/api/student/me");
 
-            DB dbInfo = new DB();
-            DataSet dsInfo = dbInfo.GetList("ST_Num='" + ST_NUM + "'");
-            DataTable dtSource = dsInfo.Tables[0];
+            if (result.result == "error" || result.data == null)
+            {
+                //出现错误，获取信息失败，跳转到错误界面 尚未完成
+                Response.Redirect("Error.aspx");
+                return;
+            }
+            UserInfo userInfo = result.data;
 
-            Label_Num.InnerText = dtSource.Rows[0]["ST_Num"].ToString();
-            Label_Name.InnerText = dtSource.Rows[0]["ST_Name"].ToString();
-            Label_Class.InnerText = dtSource.Rows[0]["ST_Class"].ToString();
-            Label_Tel.InnerText = dtSource.Rows[0]["ST_Tel"].ToString();
-            Label_ParentTel.InnerText = dtSource.Rows[0]["OneTel"].ToString();
+            Label_Num.InnerText = userInfo.UserID;
+            Label_Name.InnerText = userInfo.UserName;
+            Label_Class.InnerText = userInfo.UserClass;
+            Label_Tel.InnerText = userInfo.UserTel;
+            Label_ParentTel.InnerText = userInfo.ContactTel;
         }
 
         protected void btnSubmit_ServerClick(object sender, EventArgs e)
@@ -54,7 +64,7 @@ namespace qingjia_YiBan.SubPage
         {
             string Year = Request.Cookies["UserInfo"]["UserYear"].ToString();
             string flag = DB.getKey("Year", Year);
-            if(flag=="1")
+            if (flag == "1")
             {
                 return true;
             }

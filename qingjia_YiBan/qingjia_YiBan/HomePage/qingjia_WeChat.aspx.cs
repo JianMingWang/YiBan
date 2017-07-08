@@ -49,6 +49,10 @@ namespace qingjia_YiBan.HomePage
             UserInfo userInfo = result.data;
 
             //登录信息正确，将相关信息写入cookies
+            if (HttpContext.Current.Response.Cookies["UserInfo"] != null)
+            {
+                HttpContext.Current.Response.Cookies.Remove("UserInfo");
+            }
             HttpCookie cookie = new HttpCookie("UserInfo");
             cookie.Values.Add("UserID", userInfo.UserID);
             cookie.Values.Add("UserName", userInfo.UserName);
@@ -57,7 +61,9 @@ namespace qingjia_YiBan.HomePage
             cookie.Values.Add("UserTel", userInfo.UserTel);
             cookie.Values.Add("UserTeacher", userInfo.UserTeacherName);
             cookie.Values.Add("UserTeacherID", userInfo.UserTeacherID);
-            cookie.Expires = DateTime.Now.AddDays(1);
+            cookie.Values.Add("UserContactName", userInfo.ContactName);
+            cookie.Values.Add("UserContactTel", userInfo.ContactTel);
+            cookie.Expires = DateTime.Now.AddMinutes(20);
             HttpContext.Current.Response.Cookies.Add(cookie);
 
             UpdateInfo(userInfo);
@@ -69,11 +75,27 @@ namespace qingjia_YiBan.HomePage
         {
             string access_token = Session["access_token"].ToString();
             string ST_NUM = access_token.Substring(0, access_token.IndexOf("_"));
+
+            #region 获得晚点名信息
             Client<NightInfo> client_Night = new Client<NightInfo>();
             ApiResult<NightInfo> result_Night = client_Night.GetRequest("access_token=" + access_token, "api/student/night");
             if (result_Night.result == "success")
             {
                 NightInfo nightInfo = result_Night.data;
+
+                #region 存入Cookie
+                if (HttpContext.Current.Response.Cookies["NightInfo"] != null)
+                {
+                    HttpContext.Current.Response.Cookies.Remove("NightInfo");
+                }
+                HttpCookie cookie = new HttpCookie("NightInfo");//晚点名信息
+                cookie.Values.Add("TeacherID", nightInfo.TeacherID);//老师ID
+                cookie.Values.Add("TeacherName", nightInfo.TeacherName);//老师姓名
+                cookie.Values.Add("BatchTime", nightInfo.BatchTime);//晚点名批次时间
+                cookie.Values.Add("DeadLine", nightInfo.DeadLine);//晚点名请假截止时间
+                cookie.Expires = DateTime.Now.AddMinutes(20);
+                HttpContext.Current.Response.Cookies.Add(cookie);
+                #endregion
 
                 //晚点名请假截止时间
                 if (nightInfo.DeadLine != null)
@@ -110,12 +132,26 @@ namespace qingjia_YiBan.HomePage
                 label_EndTime.InnerText = "获取数据失败！";
                 label_CallTime.InnerText = "获取数据失败！";
             }
+            #endregion
 
+            #region 获得节假日信息
             Client<Holiday> client_Holiday = new Client<Holiday>();
             ApiResult<Holiday> result_Holiday = client_Holiday.GetRequest("access_token=" + access_token, "api/student/holiday");
             if (result_Holiday.result == "success")
             {
                 Holiday holiday = result_Holiday.data;
+
+                #region 存入Cookie
+                if (HttpContext.Current.Response.Cookies["HolidayInfo"] != null)
+                {
+                    HttpContext.Current.Response.Cookies.Remove("HolidayInfo");
+                }
+                HttpCookie cookie = new HttpCookie("HolidayInfo");//节假日离校信息
+                cookie.Values.Add("TeacherID", holiday.TeacherID);//老师ID
+                cookie.Values.Add("TeacherName", holiday.DeadLine);//截止时间
+                cookie.Expires = DateTime.Now.AddMinutes(20);
+                HttpContext.Current.Response.Cookies.Add(cookie);
+                #endregion
 
                 //节假日请假时间
                 if (holiday.DeadLine != null)
@@ -141,6 +177,7 @@ namespace qingjia_YiBan.HomePage
             {
                 vacation_end_time.Value = "获取数据失败！";
             }
+            #endregion
         }
 
         //完善个人信息

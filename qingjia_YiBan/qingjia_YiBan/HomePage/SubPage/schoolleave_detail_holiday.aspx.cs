@@ -32,25 +32,37 @@ namespace qingjia_YiBan.SubPage
 
         private void LoadDB()
         {
-            //从API接口获取数据
-            string access_token = Session["access_token"].ToString();
-            string ST_NUM = access_token.Substring(0, access_token.IndexOf("_"));
-            Client<UserInfo> client = new Client<UserInfo>();
-            ApiResult<UserInfo> result = client.GetRequest("access_token=" + access_token, "/api/student/me");
-
-            if (result.result == "error" || result.data == null)
+            if (HttpContext.Current.Request.Cookies["UserInfo"] != null)
             {
-                //出现错误，获取信息失败，跳转到错误界面 尚未完成
-                Response.Redirect("Error.aspx");
-                return;
+                HttpCookie cookie = HttpContext.Current.Request.Cookies["UserInfo"];
+                Label_Num.InnerText = cookie["UserID"].ToString();
+                Label_Name.InnerText = cookie["UserName"].ToString(); ;
+                Label_Class.InnerText = cookie["UserClass"].ToString(); ;
+                Label_Tel.InnerText = cookie["UserTel"].ToString(); ;
+                Label_ParentTel.InnerText = cookie["UserContactTel"].ToString(); ;
             }
-            UserInfo userInfo = result.data;
+            else
+            {
+                //从API接口获取数据
+                string access_token = Session["access_token"].ToString();
+                string ST_NUM = access_token.Substring(0, access_token.IndexOf("_"));
+                Client<UserInfo> client = new Client<UserInfo>();
+                ApiResult<UserInfo> result = client.GetRequest("access_token=" + access_token, "/api/student/me");
 
-            Label_Num.InnerText = userInfo.UserID;
-            Label_Name.InnerText = userInfo.UserName;
-            Label_Class.InnerText = userInfo.UserClass;
-            Label_Tel.InnerText = userInfo.UserTel;
-            Label_ParentTel.InnerText = userInfo.ContactTel;
+                if (result.result == "error" || result.data == null)
+                {
+                    //出现错误，获取信息失败，跳转到错误界面 尚未完成
+                    Response.Redirect("Error.aspx");
+                    return;
+                }
+                UserInfo userInfo = result.data;
+
+                Label_Num.InnerText = userInfo.UserID;
+                Label_Name.InnerText = userInfo.UserName;
+                Label_Class.InnerText = userInfo.UserClass;
+                Label_Tel.InnerText = userInfo.UserTel;
+                Label_ParentTel.InnerText = userInfo.ContactTel;
+            }
         }
 
         protected void btnSubmit_ServerClick(object sender, EventArgs e)

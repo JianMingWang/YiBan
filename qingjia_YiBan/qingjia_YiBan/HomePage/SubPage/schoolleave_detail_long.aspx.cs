@@ -24,25 +24,37 @@ namespace qingjia_YiBan.SubPage
 
         private void LoadDB()
         {
-            //从API接口获取数据
-            string access_token = Session["access_token"].ToString();
-            string ST_NUM = access_token.Substring(0, access_token.IndexOf("_"));
-            Client<UserInfo> client = new Client<UserInfo>();
-            ApiResult<UserInfo> result = client.GetRequest("access_token=" + access_token, "/api/student/me");
-
-            if (result.result == "error" || result.data == null)
+            if (HttpContext.Current.Request.Cookies["UserInfo"] != null)
             {
-                //出现错误，获取信息失败，跳转到错误界面 尚未完成
-                Response.Redirect("Error.aspx");
-                return;
+                HttpCookie cookie = HttpContext.Current.Request.Cookies["UserInfo"];
+                Label_Num.InnerText = cookie["UserID"].ToString();
+                Label_Name.InnerText = cookie["UserName"].ToString(); ;
+                Label_Class.InnerText = cookie["UserClass"].ToString(); ;
+                Label_Tel.InnerText = cookie["UserTel"].ToString(); ;
+                Label_ParentTel.InnerText = cookie["UserContactTel"].ToString(); ;
             }
-            UserInfo userInfo = result.data;
+            else
+            {
+                //从API接口获取数据
+                string access_token = Session["access_token"].ToString();
+                string ST_NUM = access_token.Substring(0, access_token.IndexOf("_"));
+                Client<UserInfo> client = new Client<UserInfo>();
+                ApiResult<UserInfo> result = client.GetRequest("access_token=" + access_token, "/api/student/me");
 
-            Label_Num.InnerText = userInfo.UserID;
-            Label_Name.InnerText = userInfo.UserName;
-            Label_Class.InnerText = userInfo.UserClass;
-            Label_Tel.InnerText = userInfo.UserTel;
-            Label_ParentTel.InnerText = userInfo.ContactTel;
+                if (result.result == "error" || result.data == null)
+                {
+                    //出现错误，获取信息失败，跳转到错误界面 尚未完成
+                    Response.Redirect("Error.aspx");
+                    return;
+                }
+                UserInfo userInfo = result.data;
+
+                Label_Num.InnerText = userInfo.UserID;
+                Label_Name.InnerText = userInfo.UserName;
+                Label_Class.InnerText = userInfo.UserClass;
+                Label_Tel.InnerText = userInfo.UserTel;
+                Label_ParentTel.InnerText = userInfo.ContactTel;
+            }
         }
 
         protected void btnSubmit_ServerClick(object sender, EventArgs e)
@@ -117,33 +129,6 @@ namespace qingjia_YiBan.SubPage
 
         protected void Insertdata_out()//离校请假用的
         {
-            //string LV_NUM = DateTime.Now.ToString("yyMMdd");//流水号的生成
-            //DateTime gotime_out = Convert.ToDateTime(ChangeTime(test_default1.Value.ToString()));
-            //DateTime backtime_out = Convert.ToDateTime(ChangeTime(test_default2.Value.ToString()));
-            ////检查是否存在相同申请   
-            //DataSet ds_ll = LeaveList.GetList("ID='" + Label_Num.InnerText.ToString().Trim() + "' and (( TimeLeave>='" + gotime_out + "' and TimeLeave<= '" + backtime_out + "' )"
-            //        + "or (  TimeBack>='" + gotime_out + "' and  TimeBack<= '" + backtime_out + "') or (  TimeLeave<='" + gotime_out + "' and  TimeBack>= '" + backtime_out + "')) ");
-
-            //if (ds_ll.Tables[0].Rows.Count > 0)
-            //{
-            //    for (int i = 0; i < ds_ll.Tables[0].Rows.Count; i++)
-            //    {
-            //        if (ds_ll.Tables[0].Rows[i]["StateBack"].ToString().Trim() == "0")
-            //        {
-            //            txtError.Value = "您已提交过此时间段的请假申请！";
-            //            break;
-            //        }
-            //        else
-            //        {
-            //            Insert_out(LV_NUM, gotime_out, backtime_out);
-            //            break;
-            //        }
-            //    }
-            //}
-            //else
-            //{
-            //    Insert_out(LV_NUM, gotime_out, backtime_out);
-            //}
             DateTime gotime_out = Convert.ToDateTime(ChangeTime(test_default1.Value.ToString()));
             DateTime backtime_out = Convert.ToDateTime(ChangeTime(test_default2.Value.ToString()));
 
@@ -187,59 +172,6 @@ namespace qingjia_YiBan.SubPage
                 txtError.Value = "出现未知错误，请联系管理员！";
             }
             #endregion
-
-            //DataSet ds_ll_2 = LeaveList.GetList2("LV_NUM like '%" + LV_NUM + "%' order by LV_NUM DESC ");
-            //string end3str = "0001";
-            //if (ds_ll_2.Tables[0].Rows.Count > 0)
-            //{
-            //    string leavenumtop = ds_ll_2.Tables[0].Rows[0][0].ToString().Trim();
-            //    int end3 = Convert.ToInt32(leavenumtop.Substring(6, 4));
-            //    end3++;
-            //    end3str = end3.ToString("0000");//按照此格式Tostring
-            //}
-            //LV_NUM += end3str;
-
-            //DateTime nowtime = DateTime.Now;
-            //LL_Model model_ll = new LL_Model();
-
-            ////model_ll.StudentID = Label_Num.InnerText.ToString().Trim();
-            ////model_ll.TimeLeave = gotime_out;
-            ////model_ll.TimeBack = backtime_out;
-            //////6代表节假日请假
-            ////model_ll.TypeID = 1;
-            ////model_ll.ID = LV_NUM;
-            ////model_ll.SubmitTime = nowtime;
-            ////model_ll.LeaveWay = txt_leave_way.Value.ToString().Trim();
-            ////model_ll.BackWay = txt_back_way.Value.ToString().Trim();
-            ////model_ll.Address = Leave_Reason.Value.ToString().Trim();
-            ////model_ll.StateLeave = "0";
-            ////model_ll.StateBack = "0";
-            ////model_ll.Reason = LV_REASON;
-            ////model_ll.TypeChildID = 6;
-            ////model_ll.Teacher = "";
-            ////model_ll.Lesson = "";
-            ////model_ll.Notes = "";
-
-            //model_ll.StudentID = Label_Num.InnerText.ToString().Trim();
-            //model_ll.TimeLeave = gotime_out;
-            //model_ll.TimeBack = backtime_out;
-            ////5代表短期请假
-            //model_ll.TypeID = 1;
-            //model_ll.ID = LV_NUM;
-            //model_ll.SubmitTime = nowtime;
-            //model_ll.LeaveWay = "";
-            //model_ll.BackWay = "";
-            //model_ll.Address = "";
-            //model_ll.StateLeave = "0";
-            //model_ll.StateBack = "0";
-            //model_ll.Reason = Leave_Reason.Value.ToString().Trim();
-            //model_ll.TypeChildID = 5;
-            //model_ll.Teacher = "";
-            //model_ll.Lesson = "";
-            //model_ll.Notes = "";
-
-            //LeaveList.Add(model_ll);
-            //Response.Redirect("schoolleave_succeed.aspx");
         }
 
         private string ChangeTime(string time)
