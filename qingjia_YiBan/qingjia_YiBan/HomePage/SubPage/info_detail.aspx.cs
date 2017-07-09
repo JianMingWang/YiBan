@@ -25,16 +25,13 @@ namespace qingjia_YiBan.SubPage
         //加载个人信息
         private void LoadDB()
         {
-            Response.Redirect("Error.aspx");
-            return;
-
             string access_token = Session["access_token"].ToString();
             string ST_NUM = access_token.Substring(0, access_token.IndexOf("_"));
             Client<UserInfo> client = new Client<UserInfo>();
             ApiResult<UserInfo> result = client.GetRequest("access_token=" + access_token, "/api/student/me");
             if (result.result == "error" || result.data == null)
             {
-                Response.Redirect("Error.aspx");
+                Response.Redirect("../Error.aspx");
                 return;
             }
 

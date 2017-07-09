@@ -15,7 +15,7 @@ namespace qingjia_YiBan.HomePage.Class
         public ApiResult(string error)
         {
             this.result = "error";
-            this.messages = "发送请求时，出现了未知错误！";
+            this.messages = "解析数据时，出现了未知错误！";
         }
 
         /// <summary>

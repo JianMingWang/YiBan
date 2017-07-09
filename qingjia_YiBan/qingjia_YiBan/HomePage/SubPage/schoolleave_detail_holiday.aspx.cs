@@ -52,7 +52,7 @@ namespace qingjia_YiBan.SubPage
                 if (result.result == "error" || result.data == null)
                 {
                     //出现错误，获取信息失败，跳转到错误界面 尚未完成
-                    Response.Redirect("Error.aspx");
+                    Response.Redirect("../Error.aspx");
                     return;
                 }
                 UserInfo userInfo = result.data;

@@ -20,5 +20,6 @@ namespace qingjia_YiBan.HomePage.Model.API
         public string UserDoor { get; set; }
         public string ContactName { get; set; }
         public string ContactTel { get; set; }
+        public string IsFreshman { get; set; }
     }
 }

@@ -157,5 +157,34 @@ namespace qingjia_YiBan.SubPage
             }
         }
 
+        private string ChangeTime(string time)
+        {
+            string time_changed = time.Substring(6, 4) + "-" + time.Substring(0, 2) + "-" + time.Substring(3, 2) + " ";
+            if (time.IndexOf("PM") != -1)//说明含有PM
+            {
+                if (time.Substring(11, 2) != "12")//PM   且不为12
+                {
+                    int hour = int.Parse(time.Substring(11, 2)) + 12;
+                    time_changed += hour + time.Substring(13, 3) + ":00.000";
+                }
+                else
+                {
+                    time_changed += time.Substring(11, 5) + ":00.000";
+                }
+            }
+            else//说明含有AM
+            {
+                if (time.Substring(11, 2) != "12")//PM   且不为12
+                {
+                    time_changed += time.Substring(11, 5) + ":00.000";
+                }
+                else
+                {
+                    time_changed += "00" + time.Substring(13, 3) + ":00.000";
+                }
+            }
+            return time_changed;
+        }
+
     }
 }

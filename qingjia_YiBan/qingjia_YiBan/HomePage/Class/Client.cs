@@ -61,7 +61,11 @@ namespace qingjia_YiBan.HomePage.Class
             //利用URL传值
             url = url + _url + "?" + _postString;
 
-            string response = client.DownloadString(url);
+            //string response = client.DownloadString(url);
+
+            byte[] responseData = client.DownloadData(url);
+            //将byte字节转换为字符串
+            string response = Encoding.UTF8.GetString(responseData);
 
             try
             {
