@@ -36,10 +36,10 @@ namespace qingjia_YiBan.SubPage
             {
                 HttpCookie cookie = HttpContext.Current.Request.Cookies["UserInfo"];
                 Label_Num.InnerText = cookie["UserID"].ToString();
-                Label_Name.InnerText = cookie["UserName"].ToString(); ;
-                Label_Class.InnerText = cookie["UserClass"].ToString(); ;
-                Label_Tel.InnerText = cookie["UserTel"].ToString(); ;
-                Label_ParentTel.InnerText = cookie["UserContactTel"].ToString(); ;
+                Label_Name.InnerText = HttpUtility.UrlDecode(cookie["UserName"].ToString());
+                Label_Class.InnerText = HttpUtility.UrlDecode(cookie["UserClass"].ToString());
+                Label_Tel.InnerText = cookie["UserTel"].ToString();
+                Label_ParentTel.InnerText = cookie["UserContactTel"].ToString();
             }
             else
             {
@@ -216,26 +216,84 @@ namespace qingjia_YiBan.SubPage
         //检查日期时间格式
         private bool CheckDate()
         {
-            string teacher = HttpUtility.UrlDecode(Request.Cookies["UserInfo"]["UserTeacher"].ToString());
+            string access_token = Session["access_token"].ToString();
+            string ST_NUM = access_token.Substring(0, access_token.IndexOf("_"));
 
-            DB db = new DB();
-            DataSet ds_endTime = db.GetTimeEnd(" TE_TYPE='3' AND TE_TEACHER='" + teacher + "'");
-            if (ds_endTime.Tables[0].Rows.Count > 0)
+            //判断Cookie是否存在
+            if (HttpContext.Current.Request.Cookies["HolidayInfo"] != null && HttpContext.Current.Request.Cookies["HolidayInfo"]["UserID"] == ST_NUM)
             {
-                DateTime end_time_dt = (DateTime)ds_endTime.Tables[0].Rows[0]["TE_TIME"];
-                if (end_time_dt <= DateTime.Now)//小于当前时间表示不可请假
+                HttpCookie _cookie = Request.Cookies["HolidayInfo"];
+                string time = _cookie["DeadLine"];
+                DateTime _time;
+                try
                 {
-                    return false;
+                    _time = Convert.ToDateTime(time);
+
+                    if (_time <= DateTime.Now)//小于当前时间表示不可请假
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
                 }
-                else
+                catch
                 {
-                    return true;
+                    Response.Redirect("../Error.aspx");
+                    return false;
                 }
             }
             else
             {
-                return true;
+                Client<Holiday> client_Holiday = new Client<Holiday>();
+                ApiResult<Holiday> result_Holiday = client_Holiday.GetRequest("access_token=" + access_token, "/api/student/holiday");
+                if (result_Holiday.result == "success")
+                {
+                    Holiday holiday = result_Holiday.data;
+
+                    #region 存入Cookie
+                    if (HttpContext.Current.Request.Cookies["HolidayInfo"] != null)
+                    {
+                        HttpContext.Current.Response.Cookies.Remove("HolidayInfo");
+                    }
+                    HttpCookie cookie = new HttpCookie("HolidayInfo");//节假日离校信息
+                    cookie.Values.Add("UserID", ST_NUM);
+                    cookie.Values.Add("TeacherID", holiday.TeacherID);//老师ID
+                    cookie.Values.Add("DeadLine", holiday.DeadLine);//截止时间
+                    cookie.Expires = DateTime.Now.AddMinutes(20);
+                    HttpContext.Current.Response.Cookies.Add(cookie);
+                    #endregion
+
+                    //节假日请假时间
+                    string time = holiday.DeadLine;
+                    DateTime _time;
+                    try
+                    {
+                        _time = Convert.ToDateTime(time);
+
+                        if (_time <= DateTime.Now)//小于当前时间表示不可请假
+                        {
+                            return false;
+                        }
+                        else
+                        {
+                            return true;
+                        }
+                    }
+                    catch
+                    {
+                        Response.Redirect("../Error.aspx");
+                        return false;
+                    }
+                }
+                else
+                {
+                    Response.Redirect("../Error.aspx");
+                    return false;
+                }
             }
         }
+
     }
 }

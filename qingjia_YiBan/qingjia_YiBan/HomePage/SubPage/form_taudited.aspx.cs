@@ -34,7 +34,7 @@ namespace qingjia_YiBan.SubPage
                     List<LeaveList> list = result.data;
                     foreach (LeaveList item in list)
                     {
-                        if (item.State == "待审核")
+                        if (item.State == "待销假")
                         {
                             string LV_NUM = item.ID;
                             string LeaveType = item.Type;

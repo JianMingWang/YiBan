@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
-using System.Data;
 using qingjia_YiBan.HomePage.Class;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Web.UI.HtmlControls;
 using qingjia_YiBan.HomePage.Model.API;
+using System.Text;
 
 namespace qingjia_YiBan.HomePage
 {
@@ -15,16 +10,19 @@ namespace qingjia_YiBan.HomePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                //正常运行
-                //string access_token = Request.QueryString["access_token"].ToString();
-                //Session["access_token"] = access_token;
-
-                //测试运行
-                string access_token = "0121403490106_58eda4d3-103c-4cd7-8b65-fe9bed4ca520";
-                Session["access_token"] = access_token;
-            }
+            //if (Request.QueryString["access_token"] != null)
+            //{
+            //    string access_token = Request.QueryString["access_token"].ToString();
+            //    Session["access_token"] = access_token;
+            //}
+            //else
+            //{
+            //    Response.Redirect("Error.aspx");
+            //    return;
+            //}
+            //测试运行
+            string access_token = "0121403490107_2bcfa8f4-ef53-4199-9547-61c082564367";
+            Session["access_token"] = access_token;
 
             //获取学生基本信息
             LoadDB();
@@ -36,12 +34,17 @@ namespace qingjia_YiBan.HomePage
         {
             string access_token = Session["access_token"].ToString();
             string ST_NUM = access_token.Substring(0, access_token.IndexOf("_"));
-            //判断当前回话是否存在Cookie
-            if (HttpContext.Current.Response.Cookies["UserInfo"] != null && HttpContext.Current.Response.Cookies["UserInfo"]["UserID"] == ST_NUM)
+
+            if (access_token == null)
             {
-                //判断存在的cookie是否是为当前用户
-                HttpCookie _cookie = HttpContext.Current.Response.Cookies["UserInfo"];
-                label_teacherName.InnerText = _cookie["UserContactName"].ToString();
+                Response.Redirect("Error.aspx");
+            }
+
+            //判断当前回话是否存在Cookie
+            if (HttpContext.Current.Request.Cookies["UserInfo"] != null && HttpContext.Current.Request.Cookies["UserInfo"]["UserID"] == ST_NUM)
+            {
+                HttpCookie _cookie = HttpContext.Current.Request.Cookies["UserInfo"];
+                label_teacherName.InnerText = HttpUtility.UrlDecode(_cookie["UserTeacher"]);
                 label_Year.InnerText = _cookie["UserYear"].ToString();
             }
             else
@@ -59,19 +62,19 @@ namespace qingjia_YiBan.HomePage
                 UserInfo userInfo = result.data;
 
                 //登录信息正确，将相关信息写入cookies
-                if (HttpContext.Current.Response.Cookies["UserInfo"] != null)
+                if (HttpContext.Current.Request.Cookies["UserInfo"] != null)
                 {
                     HttpContext.Current.Response.Cookies.Remove("UserInfo");
                 }
                 HttpCookie cookie = new HttpCookie("UserInfo");
                 cookie.Values.Add("UserID", userInfo.UserID.ToString().Trim());
-                cookie.Values.Add("UserName", userInfo.UserName.ToString().Trim());
-                cookie.Values.Add("UserClass", userInfo.UserClass.ToString().Trim());
+                cookie.Values.Add("UserName", HttpUtility.UrlEncode(userInfo.UserName.ToString().Trim()));
+                cookie.Values.Add("UserClass", HttpUtility.UrlEncode(userInfo.UserClass.ToString().Trim()));
                 cookie.Values.Add("UserYear", userInfo.UserYear.ToString().Trim());
                 cookie.Values.Add("UserTel", userInfo.UserTel.ToString().Trim());
-                cookie.Values.Add("UserTeacher", userInfo.UserTeacherName.ToString().Trim());
+                cookie.Values.Add("UserTeacher", HttpUtility.UrlEncode(userInfo.UserTeacherName.ToString().Trim()));
                 cookie.Values.Add("UserTeacherID", userInfo.UserTeacherID.ToString().Trim());
-                cookie.Values.Add("UserContactName", userInfo.ContactName.ToString().Trim());
+                cookie.Values.Add("UserContactName", HttpUtility.UrlEncode(userInfo.ContactName.ToString().Trim()));
                 cookie.Values.Add("UserContactTel", userInfo.ContactTel.ToString().Trim());
                 cookie.Values.Add("IsFreshman", userInfo.IsFreshman.ToString().Trim());
                 cookie.Expires = DateTime.Now.AddMinutes(20);
@@ -89,9 +92,9 @@ namespace qingjia_YiBan.HomePage
             string ST_NUM = access_token.Substring(0, access_token.IndexOf("_"));
 
             #region 获得晚点名信息
-            if (HttpContext.Current.Response.Cookies["NightInfo"] != null && HttpContext.Current.Response.Cookies["NightInfo"]["UserID"] == ST_NUM)
+            if (HttpContext.Current.Request.Cookies["NightInfo"] != null && HttpContext.Current.Request.Cookies["NightInfo"]["UserID"] == ST_NUM)
             {
-                HttpCookie _cookie = HttpContext.Current.Response.Cookies["NightInfo"];
+                HttpCookie _cookie = HttpContext.Current.Request.Cookies["NightInfo"];
                 //晚点名请假截止时间
                 if (_cookie["DeadLine"] != null)
                 {
@@ -131,10 +134,15 @@ namespace qingjia_YiBan.HomePage
                     NightInfo nightInfo = result_Night.data;
 
                     #region 存入Cookie
+                    if (Request.Cookies["NightInfo"] != null)
+                    {
+                        Response.Cookies.Remove("NightInfo");
+                    }
+
                     HttpCookie cookie = new HttpCookie("NightInfo");//晚点名信息
                     cookie.Values.Add("UserID", ST_NUM);
                     cookie.Values.Add("TeacherID", nightInfo.TeacherID);//老师ID
-                    cookie.Values.Add("TeacherName", nightInfo.TeacherName);//老师姓名
+                    cookie.Values.Add("TeacherName", HttpUtility.UrlEncode(nightInfo.TeacherName));//老师姓名
                     cookie.Values.Add("BatchTime", nightInfo.BatchTime);//晚点名批次时间
                     cookie.Values.Add("DeadLine", nightInfo.DeadLine);//晚点名请假截止时间
                     cookie.Expires = DateTime.Now.AddMinutes(20);
@@ -180,9 +188,9 @@ namespace qingjia_YiBan.HomePage
             #endregion
 
             #region 获得节假日信息
-            if (HttpContext.Current.Response.Cookies["HolidayInfo"] != null && HttpContext.Current.Response.Cookies["HolidayInfo"]["UserID"] == ST_NUM)
+            if (HttpContext.Current.Request.Cookies["HolidayInfo"] != null && HttpContext.Current.Request.Cookies["HolidayInfo"]["UserID"] == ST_NUM)
             {
-                HttpCookie _cookie = HttpContext.Current.Response.Cookies["HolidayInfo"];
+                HttpCookie _cookie = HttpContext.Current.Request.Cookies["HolidayInfo"];
                 //节假日请假时间
                 if (_cookie["DeadLine"] != null)
                 {
@@ -212,7 +220,7 @@ namespace qingjia_YiBan.HomePage
                     Holiday holiday = result_Holiday.data;
 
                     #region 存入Cookie
-                    if (HttpContext.Current.Response.Cookies["HolidayInfo"] != null)
+                    if (HttpContext.Current.Request.Cookies["HolidayInfo"] != null)
                     {
                         HttpContext.Current.Response.Cookies.Remove("HolidayInfo");
                     }
@@ -255,7 +263,7 @@ namespace qingjia_YiBan.HomePage
         //完善个人信息
         private void UpdateInfo(UserInfo userInfo)
         {
-            if (DB.InfoCheck(userInfo) == false)
+            if (userInfo.ContactName == "" || userInfo.ContactTel == "")
             {
                 Response.Redirect("./SubPage/info_detail.aspx");
             }

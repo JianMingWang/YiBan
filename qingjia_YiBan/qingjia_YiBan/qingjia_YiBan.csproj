@@ -385,7 +385,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HomePage\Class\ApiResult.cs" />
-    <Compile Include="HomePage\Class\DB.cs" />
     <Compile Include="HomePage\Class\LL_Model.cs" />
     <Compile Include="HomePage\Class\Client.cs" />
     <Compile Include="HomePage\Class\Student.cs" />

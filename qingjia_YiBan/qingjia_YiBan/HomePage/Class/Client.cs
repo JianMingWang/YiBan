@@ -13,7 +13,7 @@ namespace qingjia_YiBan.HomePage.Class
         private WebClient client = new WebClient();
         private string url = ConfigurationManager.AppSettings["qingjiaApiUrl"].ToString();
         private ApiResult<T> error_result = new ApiResult<T>("error");
-
+        
         /// <summary>
         /// POST请求
         /// </summary>

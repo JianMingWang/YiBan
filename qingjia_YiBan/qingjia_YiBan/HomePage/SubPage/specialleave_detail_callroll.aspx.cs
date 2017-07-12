@@ -33,8 +33,8 @@ namespace qingjia_YiBan.SubPage
             {
                 HttpCookie cookie = HttpContext.Current.Request.Cookies["UserInfo"];
                 Label_Num.InnerText = cookie["UserID"].ToString();
-                Label_Name.InnerText = cookie["UserName"].ToString(); ;
-                Label_Class.InnerText = cookie["UserClass"].ToString(); ;
+                Label_Name.InnerText = HttpUtility.UrlDecode(cookie["UserName"].ToString());
+                Label_Class.InnerText = HttpUtility.UrlDecode(cookie["UserClass"].ToString());
                 Label_Tel.InnerText = cookie["UserTel"].ToString(); ;
                 Label_ParentTel.InnerText = cookie["UserContactTel"].ToString(); ;
             }
@@ -135,7 +135,7 @@ namespace qingjia_YiBan.SubPage
                 }
                 else
                 {
-                    Response.Redirect("Error.Aspx");
+                    Response.Redirect("../Error.Aspx");
                     return false;
                 }
             }

@@ -45,21 +45,6 @@ namespace qingjia_YiBan.SubPage
                     }
                 }
             }
-
-            //string ST_NUM = Request.Cookies["UserInfo"]["UserID"].ToString();
-
-            //string strWHere = " StudentID = '" + ST_NUM + "' and StateLeave ='0' and StateBack='0'";
-            //DataSet ds = LeaveList.GetList3(strWHere);
-            //DataTable dtSource = ds.Tables[0];
-            //for (int i = 0; i < dtSource.Rows.Count; i++)
-            //{
-            //    string LV_NUM = dtSource.Rows[i]["ID"].ToString();
-            //    string LeaveType = DB.getKey("LeaveType", dtSource.Rows[i]["TypeChildID"].ToString());
-            //    string go_time = dtSource.Rows[i]["TimeLeave"].ToString();
-            //    string back_time = dtSource.Rows[i]["TimeBack"].ToString();
-            //    leave_list_div.Controls.Add(CreatLeaveList(LV_NUM, LeaveType, go_time, back_time));
-            //    leave_list_div.Controls.Add(CreatBr());
-            //}
         }
 
         /// <summary>

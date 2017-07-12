@@ -20,7 +20,6 @@ namespace qingjia_YiBan.SubPage
 
         protected void btnSubmit_ServerClick(object sender, EventArgs e)
         {
-            Response.Redirect("../qingjia_WeChat.aspx");
             if (Check())
             {
                 string UserID = User_Num.Value.ToString().Trim();
@@ -28,7 +27,8 @@ namespace qingjia_YiBan.SubPage
                 string YiBanID = Request.QueryString["YiBanID"].ToString();
 
                 Client<AccessToken> client = new Client<AccessToken>();
-                ApiResult<AccessToken> result = client.PostRequest("", "");
+                string _postString = String.Format("UserID={0}&UserPsd={1}&YiBanID={2}", UserID, UserPsd, YiBanID);
+                ApiResult<AccessToken> result = client.PostRequest(_postString, "/api/oauth/authorize");
                 if (result.result == "error")
                 {
                     txtError.Value = result.messages;
