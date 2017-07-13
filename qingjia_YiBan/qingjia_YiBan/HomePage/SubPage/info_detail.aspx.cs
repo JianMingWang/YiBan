@@ -67,7 +67,7 @@ namespace qingjia_YiBan.SubPage
                 string ST_QQ = txtQQ.Value;
                 string Guardian = txtGuardianName.Value.ToString().Trim();
                 string ST_Guardian = Guardian.Substring(0, 2);
-                string ST_GuardianName = Guardian.Substring(3, ST_Guardian.Length - 3);
+                string ST_GuardianName = Guardian.Substring(3, Guardian.Length - 3);
                 string ST_GuardianTel = txtGuardianNum.Value;
 
                 Client<string> client = new Client<string>();
@@ -97,14 +97,22 @@ namespace qingjia_YiBan.SubPage
                         if (CheckText(txtGuardianName))
                         {
                             string st_guardian_name = txtGuardianName.Value.ToString().Trim();
-                            if (!((st_guardian_name.Substring(0, 2) == "父亲" || st_guardian_name.Substring(0, 2) == "母亲" || st_guardian_name.Substring(0, 2) == "其他") && st_guardian_name.Substring(2, 1) == "-"))
+                            if (st_guardian_name.Length > 3)
                             {
-                                txtError.Value = "填写方式错误！关系为父亲、母亲、其他";
-                                return false;
+                                if (!((st_guardian_name.Substring(0, 2) == "父亲" || st_guardian_name.Substring(0, 2) == "母亲" || st_guardian_name.Substring(0, 2) == "其他") && st_guardian_name.Substring(2, 1) == "-"))
+                                {
+                                    txtError.Value = "填写方式错误！关系为父亲、母亲、其他";
+                                    return false;
+                                }
+                                else
+                                {
+                                    return true;
+                                }
                             }
                             else
                             {
-                                return true;
+                                txtError.Value = "请注意填写方式！";
+                                return false;
                             }
                         }
                         else

@@ -142,11 +142,11 @@ namespace qingjia_YiBan.SubPage
                 leave_child_type = "病假";
             }
 
-            string postString = String.Format("access_token={0}&leave_child_type={1}&leave_date={2}&leave_reason={3}&teacher_name={4}&lesson={5}", access_token, leave_child_type, leave_date, leave_reason, teacher_name, lesson);
+            string _postString = String.Format("access_token={0}&leave_child_type={1}&leave_date={2}&leave_reason={3}&teacher_name={4}&lesson={5}", access_token, leave_child_type, leave_date, leave_reason, teacher_name, lesson);
 
             Client<string> client = new Client<string>();
             ApiResult<string> result = new ApiResult<string>();
-            result = client.PostRequest(postString, "/api/leavelist/leavelesson");
+            result = client.PostRequest(_postString, "/api/leavelist/leavelesson");
             if (result.result == "success")
             {
                 Response.Redirect("classleave_succeed.aspx");
@@ -159,32 +159,8 @@ namespace qingjia_YiBan.SubPage
 
         private string ChangeTime(string time)
         {
-            string time_changed = time.Substring(6, 4) + "-" + time.Substring(0, 2) + "-" + time.Substring(3, 2) + " ";
-            if (time.IndexOf("PM") != -1)//说明含有PM
-            {
-                if (time.Substring(11, 2) != "12")//PM   且不为12
-                {
-                    int hour = int.Parse(time.Substring(11, 2)) + 12;
-                    time_changed += hour + time.Substring(13, 3) + ":00.000";
-                }
-                else
-                {
-                    time_changed += time.Substring(11, 5) + ":00.000";
-                }
-            }
-            else//说明含有AM
-            {
-                if (time.Substring(11, 2) != "12")//PM   且不为12
-                {
-                    time_changed += time.Substring(11, 5) + ":00.000";
-                }
-                else
-                {
-                    time_changed += "00" + time.Substring(13, 3) + ":00.000";
-                }
-            }
+            string time_changed = time.Substring(6, 4) + "-" + time.Substring(0, 2) + "-" + time.Substring(3, 2);
             return time_changed;
         }
-
     }
 }
