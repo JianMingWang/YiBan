@@ -12,6 +12,8 @@
     <div>
         发生了错误！
     </div>
+        <br />
+        <asp:TextBox ID="ErrorMessage" runat="server" Visible="false"></asp:TextBox>
     </form>
 </body>
 </html>

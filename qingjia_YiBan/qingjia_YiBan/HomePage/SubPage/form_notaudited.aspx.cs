@@ -101,7 +101,7 @@ namespace qingjia_YiBan.SubPage
             Div_04_02.Controls.Add(Text_04);
 
             //创建按钮
-            HtmlGenericControl Div_05_01 = CreatSubmit("", "weui-btn weui-btn_primary", "", "form_succeed.aspx?LV_NUM='" + LV_NUM + "'");
+            HtmlGenericControl Div_05_01 = CreatSubmit("", "weui-btn weui-btn_primary", "", "form_succeed.aspx?LV_NUM=" + LV_NUM);
 
             //创建换行
             HtmlGenericControl br1 = CreatBr();
@@ -211,7 +211,7 @@ namespace qingjia_YiBan.SubPage
             //Creat_Submit.Attributes.Add("runat", "server");
             //Creat_Submit.Attributes.Add("type", "submit");
             //Creat_Submit.Attributes.Add("Value", Value);
-            //Creat_Submit.Attributes.Add("onserverclick", clickEvent);
+            //Creat_Submit.Attributes.Add("onclick", "Revoke(" + Value + ");");
             Creat_Submit.Attributes.Add("href", href);
             Creat_Submit.InnerText = "立即撤销";
             return Creat_Submit;

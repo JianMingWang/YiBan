@@ -11,7 +11,11 @@ namespace qingjia_YiBan.HomePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Request.QueryString["errorMessage"] != null)
+            {
+                ErrorMessage.Text = Request.QueryString["errorMessage"].ToString();
+                ErrorMessage.Visible = true;
+            }
         }
     }
 }

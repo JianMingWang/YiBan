@@ -31,7 +31,7 @@ namespace qingjia_YiBan.SubPage
             ApiResult<UserInfo> result = client.GetRequest("access_token=" + access_token, "/api/student/me");
             if (result.result == "error" || result.data == null)
             {
-                Response.Redirect("../Error.aspx");
+                Response.Redirect("../Error.aspx?errorMessage=" + result.messages);
                 return;
             }
 

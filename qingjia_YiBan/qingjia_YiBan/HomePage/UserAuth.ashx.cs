@@ -27,6 +27,7 @@ namespace qingjia_YiBan.HomePage
             {
                 var url = string.Format("https://openapi.yiban.cn/oauth/authorize?client_id={0}&redirect_uri=http%3a%2f%2fzhanglidaoyan.com&state=STATE", appid);
                 context.Response.Redirect(url);
+                return;
             }
             else
             {

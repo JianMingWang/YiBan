@@ -15,8 +15,9 @@ namespace qingjia_YiBan.HomePage
                 string access_token = Request.QueryString["access_token"].ToString();
                 Session["access_token"] = access_token;
             }
+
             //测试运行
-            //string access_token = "0121403490107_68dd28b9-06cb-4246-8185-e7c40b41cbb2";
+            //string access_token = "0121403490107_3749f6d6-8a19-4bb3-887a-3d9d2f464d96";
             //Session["access_token"] = access_token;
 
             //获取学生基本信息

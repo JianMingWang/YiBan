@@ -100,19 +100,19 @@
     </div>
 	<script type="text/html" id="tpl_tabbar">
 	<div class="weui_tabbar">
-        <a href="javascript:;" onclick="showdiv('qingjia_index_leave')" class="weui_tabbar_item">
+        <a href="javascript:void(0);" onclick="showdiv('qingjia_index_leave')" class="weui_tabbar_item">
             <div class="weui_tabbar_icon">
                 <img src="./images/icon_nav_article.png" alt="" />
             </div>
             <p class="weui_tabbar_label">请假</p>
         </a>
-        <a href="javascript:;" onclick="showdiv('qingjia_index_notice')" class="weui_tabbar_item weui_bar_item_on">
+        <a href="javascript:void(0);" onclick="showdiv('qingjia_index_notice')" class="weui_tabbar_item weui_bar_item_on">
             <div class="weui_tabbar_icon">
                 <img src="./images/icon_nav_button.png" alt="" />
             </div>
             <p class="weui_tabbar_label">通知</p>
         </a>
-        <a href="javascript:;" onclick="showdiv('qingjia_index_info')" class="weui_tabbar_item">
+        <a href="javascript:void(0);" onclick="showdiv('qingjia_index_info')" class="weui_tabbar_item">
             <div class="weui_tabbar_icon">
                 <img src="./images/icon_nav_cell.png" alt="" />
             </div>
