@@ -59,4 +59,7 @@ C:\Users\Wong Jianming\Desktop\YiBan\qingjia_YiBan\qingjia_YiBan\bin\System.Xml.
 C:\Users\Wong Jianming\Desktop\YiBan\qingjia_YiBan\qingjia_YiBan\bin\System.Xml.Linq.dll
 C:\Users\Wong Jianming\Desktop\YiBan\qingjia_YiBan\qingjia_YiBan\obj\Debug\qingjia_YiBan.dll
 C:\Users\Wong Jianming\Desktop\YiBan\qingjia_YiBan\qingjia_YiBan\obj\Debug\qingjia_YiBan.pdb
-C:\Users\Wong Jianming\Desktop\YiBan\qingjia_YiBan\qingjia_YiBan\obj\Debug\qingjia_YiBan.csprojResolveAssemblyReference.cache
+C:\Users\Wong Jianming\Desktop\YiBan\qingjia_YiBan\qingjia_YiBan\bin\YbSDK.dll
+C:\Users\Wong Jianming\Desktop\YiBan\qingjia_YiBan\qingjia_YiBan\bin\RestSharp.dll
+C:\Users\Wong Jianming\Desktop\YiBan\qingjia_YiBan\qingjia_YiBan\bin\YbSDK.pdb
+C:\Users\Wong Jianming\Desktop\YiBan\qingjia_YiBan\qingjia_YiBan\bin\RestSharp.xml

@@ -88,6 +88,9 @@
     <Reference Include="System.Xml.Linq">
       <Private>True</Private>
     </Reference>
+    <Reference Include="YbSDK">
+      <HintPath>..\..\YbSDK\YbSDK\bin\Debug\YbSDK.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="HomePage\Error.aspx" />
