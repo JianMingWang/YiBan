@@ -17,7 +17,7 @@ namespace qingjia_YiBan.HomePage
             }
 
             //测试运行
-            //string access_token = "0121403490107_3749f6d6-8a19-4bb3-887a-3d9d2f464d96";
+            //string access_token = "0121403490107_f8f91b69-4650-4af8-bb55-1aefc0d3fe03";
             //Session["access_token"] = access_token;
 
             //获取学生基本信息

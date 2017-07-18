@@ -63,3 +63,4 @@ C:\Users\Wong Jianming\Desktop\YiBan\qingjia_YiBan\qingjia_YiBan\bin\YbSDK.dll
 C:\Users\Wong Jianming\Desktop\YiBan\qingjia_YiBan\qingjia_YiBan\bin\RestSharp.dll
 C:\Users\Wong Jianming\Desktop\YiBan\qingjia_YiBan\qingjia_YiBan\bin\YbSDK.pdb
 C:\Users\Wong Jianming\Desktop\YiBan\qingjia_YiBan\qingjia_YiBan\bin\RestSharp.xml
+C:\Users\Wong Jianming\Desktop\YiBan\qingjia_YiBan\qingjia_YiBan\obj\Debug\qingjia_YiBan.csprojResolveAssemblyReference.cache

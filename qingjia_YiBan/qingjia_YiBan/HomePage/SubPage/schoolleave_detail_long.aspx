@@ -5,93 +5,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0" />
     <title>请假系统-离校请假-IMAW</title>
     <link rel="stylesheet" href="css/weui.css" />
     <link rel="stylesheet" href="css/example.css" />
     <link rel="stylesheet" href="css/index.css" />
-    <script src="js/example.js"></script>
     <script src="js/router.min.js"></script>
     <script src="js/zepto.min.js"></script>
-
-
-    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <script src="dev/js/mobiscroll.core-2.6.2.js" type="text/javascript"></script>
-	<script src="dev/js/mobiscroll.core-2.6.2-hu.js" type="text/javascript"></script>
-	<script src="dev/js/mobiscroll.core-2.6.2-de.js" type="text/javascript"></script>
-	<script src="dev/js/mobiscroll.core-2.6.2-es.js" type="text/javascript"></script>
-	<script src="dev/js/mobiscroll.core-2.6.2-fr.js" type="text/javascript"></script>
-	<script src="dev/js/mobiscroll.core-2.6.2-it.js" type="text/javascript"></script>
-	<script src="dev/js/mobiscroll.core-2.6.2-no.js" type="text/javascript"></script>
-	<script src="dev/js/mobiscroll.core-2.6.2-pt-BR.js" type="text/javascript"></script>
-	<script src="dev/js/mobiscroll.core-2.6.2-zh.js" type="text/javascript"></script>
-	<script src="dev/js/mobiscroll.core-2.6.2-nl.js" type="text/javascript"></script>
-	<script src="dev/js/mobiscroll.core-2.6.2-tr.js" type="text/javascript"></script>
-	<script src="dev/js/mobiscroll.core-2.6.2-ja.js" type="text/javascript"></script>
-	<link href="dev/css/mobiscroll.core-2.6.2.css" rel="stylesheet" type="text/css" />
+    <link href="dev/css/mobiscroll.core-2.6.2.css" rel="stylesheet" type="text/css" />
 	<link href="dev/css/mobiscroll.animation-2.6.2.css" rel="stylesheet" type="text/css" />
-	<script src="dev/js/mobiscroll.datetime-2.6.2.js" type="text/javascript"></script>
-	<script src="dev/js/mobiscroll.list-2.6.2.js" type="text/javascript"></script>
-	<script src="dev/js/mobiscroll.list-2.6.2.js" type="text/javascript"></script>
-	<script src="dev/js/mobiscroll.select-2.6.2.js" type="text/javascript"></script>
-	<script src="dev/js/mobiscroll.android-ics-2.6.2.js" type="text/javascript"></script>
-	<link href="dev/css/mobiscroll.android-ics-2.6.2.css" rel="stylesheet" type="text/css" />
-    <script src="dev/js/mobiscroll.wp-2.6.2.js" type="text/javascript"></script>
-	<link href="dev/css/mobiscroll.wp-2.6.2.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript">
-        $(function () {
-            var curr = new Date().getFullYear();
-            var opt = {
+    <link href="dev/css/mobiscroll.wp-2.6.2.css" rel="stylesheet" type="text/css" />
 
-            }
-
-            opt.date = {preset : 'date'};
-	opt.datetime = { preset : 'datetime', minDate: new Date(2014,1,1,0,00), maxDate: new Date(2020,12,31,23,59), stepMinute: 5  };
-	opt.time = {preset : 'time'};
-	opt.tree_list = {preset : 'list', labels: ['Region', 'Country', 'City']};
-	opt.image_text = {preset : 'list', labels: ['Cars']};
-	opt.select = {preset : 'select'};
-
-            $('select.changes').bind('change', function() {
-                var demo = $('#demo').val();
-                $(".demos").hide();
-                if (!($("#demo_"+demo).length))
-                    demo = 'default1';
-
-                $("#demo_" + demo).show();
-                $('#test_'+demo).val('').scroller('destroy').scroller($.extend(opt[$('#demo').val()], { theme: $('#theme').val(), mode: $('#mode').val(), display: $('#display').val(), lang: $('#language').val() }));
-            });
-
-            $('#demo').trigger('change');
-        });
-    </script>
-    <script type="text/javascript">
-        $(function () {
-            var curr = new Date().getFullYear();
-            var opt = {
-
-            }
-
-            opt.date = {preset : 'date'};
-            opt.datetime = { preset : 'datetime', minDate: new Date(2014,1,1,0,00), maxDate: new Date(2020,12,31,23,59), stepMinute: 5  };
-            opt.time = {preset : 'time'};
-            opt.tree_list = {preset : 'list', labels: ['Region', 'Country', 'City']};
-            opt.image_text = {preset : 'list', labels: ['Cars']};
-            opt.select = {preset : 'select'};
-
-                    $('select.changes').bind('change', function() {
-                        var demo = $('#demo').val();
-                        $(".demos").hide();
-                        if (!($("#demo_"+demo).length))
-                            demo = 'default2';
-
-                        $("#demo_" + demo).show();
-                        $('#test_'+demo).val('').scroller('destroy').scroller($.extend(opt[$('#demo').val()], { theme: $('#theme').val(), mode: $('#mode').val(), display: $('#display').val(), lang: $('#language').val() }));
-                    });
-
-            $('#demo').trigger('change');
-        });
-    </script>
 </head>
 <body>
     <form runat="server">
@@ -249,4 +173,65 @@
 </div>
         </form>
 </body>
+
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="dev/js/mobiscroll.core-2.6.2.js" type="text/javascript"></script>
+	
+	<script src="dev/js/mobiscroll.datetime-2.6.2.js" type="text/javascript"></script>
+    <script src="dev/js/mobiscroll.wp-2.6.2.js" type="text/javascript"></script>
+	
+    <script type="text/javascript">
+        $(function () {
+            var curr = new Date().getFullYear();
+            var opt = {
+
+            }
+
+            opt.date = { preset: 'date' };
+            opt.datetime = { preset: 'datetime', minDate: new Date(2014, 1, 1, 0, 00), maxDate: new Date(2050, 12, 31, 23, 59), stepMinute: 5 };
+            opt.time = { preset: 'time' };
+            opt.tree_list = { preset: 'list', labels: ['Region', 'Country', 'City'] };
+            opt.image_text = { preset: 'list', labels: ['Cars'] };
+            opt.select = { preset: 'select' };
+
+            $('select.changes').bind('change', function () {
+                var demo = $('#demo').val();
+                $(".demos").hide();
+                if (!($("#demo_" + demo).length))
+                    demo = 'default1';
+
+                $("#demo_" + demo).show();
+                $('#test_' + demo).val('').scroller('destroy').scroller($.extend(opt[$('#demo').val()], { theme: "wp light", mode: "scroller", display: "bottom", lang: "" }));
+            });
+
+            $('#demo').trigger('change');
+        });
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            var curr = new Date().getFullYear();
+            var opt = {
+
+            }
+
+            opt.date = { preset: 'date' };
+            opt.datetime = { preset: 'datetime', minDate: new Date(2014, 1, 1, 0, 00), maxDate: new Date(2050, 12, 31, 23, 59), stepMinute: 5 };
+            opt.time = { preset: 'time' };
+            opt.tree_list = { preset: 'list', labels: ['Region', 'Country', 'City'] };
+            opt.image_text = { preset: 'list', labels: ['Cars'] };
+            opt.select = { preset: 'select' };
+
+            $('select.changes').bind('change', function () {
+                var demo = $('#demo').val();
+                $(".demos").hide();
+                if (!($("#demo_" + demo).length))
+                    demo = 'default2';
+
+                $("#demo_" + demo).show();
+                $('#test_' + demo).val('').scroller('destroy').scroller($.extend(opt[$('#demo').val()], { theme: "wp light", mode: "scroller", display: "bottom", lang: "" }));
+            });
+
+            $('#demo').trigger('change');
+        });
+    </script>
 </html>
