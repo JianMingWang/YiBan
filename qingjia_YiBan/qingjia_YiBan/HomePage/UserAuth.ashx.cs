@@ -41,10 +41,10 @@ namespace qingjia_YiBan.HomePage
                 string decryptStr = Decrypt(encryptStr, Key, IV);
                 if (decryptStr.Contains("\"visit_oauth\":false"))
                 {
-                    // result = new VisitOauth() { IsAuthorized = false };
-                    YBresult = new VisitOauth();
-                    //YiBan 授权失败 跳转到绑定页面
-                    context.Response.Redirect("Error.aspx?errorMessage=" + "获取授权失败，请重新打开轻应用！");
+
+                    var url = string.Format("https://openapi.yiban.cn/oauth/authorize?client_id={0}&redirect_uri=http%3a%2f%2ff.yiban.cn/iapp131261&display=html", appid);
+                    context.Response.Redirect(url);
+                    return;
                 }
                 else
                 {
