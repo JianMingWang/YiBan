@@ -61,6 +61,12 @@
                     </div>
                 </div>
                 <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label3">邮箱地址</label></div>
+                    <div class="weui-cell__bd" style="color:rgb(169,169,169);">
+                        <input class="weui-input" type="text" runat="server" id="txtEmail" />
+                    </div>
+                </div>
+                <div class="weui-cell">
                     <div class="weui-cell__hd"><label class="weui-label3">与家长关系及姓名</label></div>
                     <div class="weui-cell__bd" style="color:rgb(169,169,169);">
                         <input class="weui-input" type="text" placeholder="例：父亲-某某某" runat="server" id="txtGuardianName" />

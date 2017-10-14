@@ -85,7 +85,7 @@
         </div>
 
         <div id="Default_Version">
-            <div class="weui-cells__title" style="text-align:right; font-size:15px; font-family:宋体; color:rgb(169,169,169);">V.170713</div>
+            <div class="weui-cells__title" style="text-align:right; font-size:15px; font-family:宋体; color:rgb(169,169,169);">V.171014</div>
         </div>
 
         </div>

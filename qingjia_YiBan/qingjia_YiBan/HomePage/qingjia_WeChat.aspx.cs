@@ -2,7 +2,6 @@
 using System.Web;
 using qingjia_YiBan.HomePage.Class;
 using qingjia_YiBan.HomePage.Model.API;
-using System.Text;
 
 namespace qingjia_YiBan.HomePage
 {
