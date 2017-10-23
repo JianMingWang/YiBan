@@ -16,7 +16,7 @@ namespace qingjia_YiBan.HomePage
             }
 
             //测试运行
-            //string access_token = "0121403490107_f8f91b69-4650-4af8-bb55-1aefc0d3fe03";
+            //string access_token = "0121603490133_dd95d5ee-5d1b-48ce-a66d-735a2da1cebd";
             //Session["access_token"] = access_token;
 
             //获取学生基本信息
@@ -89,9 +89,10 @@ namespace qingjia_YiBan.HomePage
             #region 获得晚点名信息
             if (HttpContext.Current.Request.Cookies["NightInfo"] != null && HttpContext.Current.Request.Cookies["NightInfo"]["UserID"] == ST_NUM)
             {
+                #region 从Cookie中读取数据
                 HttpCookie _cookie = HttpContext.Current.Request.Cookies["NightInfo"];
                 //晚点名请假截止时间
-                if (_cookie["DeadLine"] != null)
+                if (_cookie["DeadLine"] != null && _cookie["DeadLine"].ToString() != "null" && _cookie["DeadLine"].ToString() != "")
                 {
                     DateTime end_time_night = Convert.ToDateTime(_cookie["DeadLine"].ToString());
 
@@ -110,8 +111,9 @@ namespace qingjia_YiBan.HomePage
                 }
 
                 //晚点名时间
-                if (_cookie["BatchTime"] != null)
+                if (_cookie["BatchTime"] != null && _cookie["BatchTime"].ToString() != "null" && _cookie["BatchTime"].ToString() != "")
                 {
+                    string time = _cookie["BatchTime"].ToString();
                     DateTime call_time = Convert.ToDateTime(_cookie["BatchTime"].ToString());
                     label_CallTime.InnerText = call_time.ToString("yyyy/MM/dd HH:mm");
                 }
@@ -119,9 +121,11 @@ namespace qingjia_YiBan.HomePage
                 {
                     label_CallTime.InnerText = "未设置";
                 }
+                #endregion
             }
             else
             {
+                #region 从接口获取数据
                 Client<NightInfo> client_Night = new Client<NightInfo>();
                 ApiResult<NightInfo> result_Night = client_Night.GetRequest("access_token=" + access_token, "/api/student/night");
                 if (result_Night.result == "success")
@@ -179,6 +183,7 @@ namespace qingjia_YiBan.HomePage
                     label_EndTime.InnerText = "获取数据失败！";
                     label_CallTime.InnerText = "获取数据失败！";
                 }
+                #endregion
             }
             #endregion
 
