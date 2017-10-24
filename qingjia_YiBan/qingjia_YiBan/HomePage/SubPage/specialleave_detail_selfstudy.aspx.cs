@@ -138,7 +138,6 @@ namespace qingjia_YiBan.SubPage
 
         public void Insert_out(DateTime gotime_out)
         {
-
             #region 拼装数据
             string access_token = Session["access_token"].ToString();
             string leave_type = "早晚自习请假";

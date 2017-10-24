@@ -9,15 +9,15 @@ namespace qingjia_YiBan.HomePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (Request.QueryString["access_token"] != null)
-            //{
-            //    string access_token = Request.QueryString["access_token"].ToString();
-            //    Session["access_token"] = access_token;
-            //}
+            if (Request.QueryString["access_token"] != null)
+            {
+                string access_token = Request.QueryString["access_token"].ToString();
+                Session["access_token"] = access_token;
+            }
 
             //测试运行
-            string access_token = "0121703490208_1";
-            Session["access_token"] = access_token;
+            //string access_token = "0121703941322_92e3fb92-5db4-4cd6-a8a0-08e2856052e5";
+            //Session["access_token"] = access_token;
 
             //获取学生基本信息
             LoadDB();
