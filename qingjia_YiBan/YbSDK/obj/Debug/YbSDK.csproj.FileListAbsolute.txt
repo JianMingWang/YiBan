@@ -49,7 +49,6 @@ C:\Users\Wong Jianming\Desktop\YiBan\qingjia_YiBan\YbSDK\bin\Debug\System.dll
 C:\Users\Wong Jianming\Desktop\YiBan\qingjia_YiBan\YbSDK\bin\Debug\System.Web.Extensions.dll
 C:\Users\Wong Jianming\Desktop\YiBan\qingjia_YiBan\YbSDK\bin\Debug\System.Xml.dll
 C:\Users\Wong Jianming\Desktop\YiBan\qingjia_YiBan\YbSDK\bin\Debug\System.Xml.Linq.dll
-C:\Users\Wong Jianming\Desktop\YiBan\qingjia_YiBan\YbSDK\bin\Debug\RestSharp.xml
 C:\Users\Wong Jianming\Desktop\YiBan\qingjia_YiBan\YbSDK\obj\Debug\YbSDK.csprojResolveAssemblyReference.cache
 C:\Users\Wong Jianming\Desktop\YiBan\qingjia_YiBan\YbSDK\obj\Debug\YbSDK.dll
 C:\Users\Wong Jianming\Desktop\YiBan\qingjia_YiBan\YbSDK\obj\Debug\YbSDK.pdb

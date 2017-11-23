@@ -1,7 +1,7 @@
-﻿using System;
-using System.Web;
-using qingjia_YiBan.HomePage.Class;
+﻿using qingjia_YiBan.HomePage.Class;
 using qingjia_YiBan.HomePage.Model.API;
+using System;
+using System.Web;
 
 namespace qingjia_YiBan.HomePage
 {
@@ -16,7 +16,7 @@ namespace qingjia_YiBan.HomePage
             }
 
             //测试运行
-            //string access_token = "0121703940221_7d6ac950-623e-4542-8a15-b58c3411a5a9";
+            //string access_token = "0121403490106_1d130165-9736-4250-b571-4209849b92c7";
             //Session["access_token"] = access_token;
 
             //获取学生基本信息
@@ -87,14 +87,32 @@ namespace qingjia_YiBan.HomePage
             string ST_NUM = access_token.Substring(0, access_token.IndexOf("_"));
 
             #region 获得晚点名信息
-            if (HttpContext.Current.Request.Cookies["NightInfo"] != null && HttpContext.Current.Request.Cookies["NightInfo"]["UserID"] == ST_NUM)
+            Client<NightInfo> client_Night = new Client<NightInfo>();
+            ApiResult<NightInfo> result_Night = client_Night.GetRequest("access_token=" + access_token, "/api/student/night");
+            if (result_Night.result == "success")
             {
-                #region 从Cookie中读取数据
-                HttpCookie _cookie = HttpContext.Current.Request.Cookies["NightInfo"];
-                //晚点名请假截止时间
-                if (_cookie["DeadLine"] != null && _cookie["DeadLine"].ToString() != "null" && _cookie["DeadLine"].ToString() != "")
+                NightInfo nightInfo = result_Night.data;
+
+                #region 存入Cookie
+                if (Request.Cookies["NightInfo"] != null)
                 {
-                    DateTime end_time_night = Convert.ToDateTime(_cookie["DeadLine"].ToString());
+                    Response.Cookies.Remove("NightInfo");
+                }
+
+                HttpCookie cookie = new HttpCookie("NightInfo");//晚点名信息
+                cookie.Values.Add("UserID", ST_NUM);
+                cookie.Values.Add("TeacherID", nightInfo.TeacherID);//老师ID
+                cookie.Values.Add("TeacherName", HttpUtility.UrlEncode(nightInfo.TeacherName));//老师姓名
+                cookie.Values.Add("BatchTime", nightInfo.BatchTime);//晚点名批次时间
+                cookie.Values.Add("DeadLine", nightInfo.DeadLine);//晚点名请假截止时间
+                cookie.Expires = DateTime.Now.AddMinutes(20);
+                HttpContext.Current.Response.Cookies.Add(cookie);
+                #endregion
+
+                //晚点名请假截止时间
+                if (nightInfo.DeadLine != null)
+                {
+                    DateTime end_time_night = Convert.ToDateTime(nightInfo.DeadLine);
 
                     if (end_time_night < DateTime.Now)//小于当前是见表示尚可请假
                     {
@@ -111,79 +129,20 @@ namespace qingjia_YiBan.HomePage
                 }
 
                 //晚点名时间
-                if (_cookie["BatchTime"] != null && _cookie["BatchTime"].ToString() != "null" && _cookie["BatchTime"].ToString() != "")
+                if (nightInfo.BatchTime != null)
                 {
-                    string time = _cookie["BatchTime"].ToString();
-                    DateTime call_time = Convert.ToDateTime(_cookie["BatchTime"].ToString());
+                    DateTime call_time = Convert.ToDateTime(nightInfo.BatchTime);
                     label_CallTime.InnerText = call_time.ToString("yyyy/MM/dd HH:mm");
                 }
                 else
                 {
                     label_CallTime.InnerText = "未设置";
                 }
-                #endregion
             }
             else
             {
-                #region 从接口获取数据
-                Client<NightInfo> client_Night = new Client<NightInfo>();
-                ApiResult<NightInfo> result_Night = client_Night.GetRequest("access_token=" + access_token, "/api/student/night");
-                if (result_Night.result == "success")
-                {
-                    NightInfo nightInfo = result_Night.data;
-
-                    #region 存入Cookie
-                    if (Request.Cookies["NightInfo"] != null)
-                    {
-                        Response.Cookies.Remove("NightInfo");
-                    }
-
-                    HttpCookie cookie = new HttpCookie("NightInfo");//晚点名信息
-                    cookie.Values.Add("UserID", ST_NUM);
-                    cookie.Values.Add("TeacherID", nightInfo.TeacherID);//老师ID
-                    cookie.Values.Add("TeacherName", HttpUtility.UrlEncode(nightInfo.TeacherName));//老师姓名
-                    cookie.Values.Add("BatchTime", nightInfo.BatchTime);//晚点名批次时间
-                    cookie.Values.Add("DeadLine", nightInfo.DeadLine);//晚点名请假截止时间
-                    cookie.Expires = DateTime.Now.AddMinutes(20);
-                    HttpContext.Current.Response.Cookies.Add(cookie);
-                    #endregion
-
-                    //晚点名请假截止时间
-                    if (nightInfo.DeadLine != null)
-                    {
-                        DateTime end_time_night = Convert.ToDateTime(nightInfo.DeadLine);
-
-                        if (end_time_night < DateTime.Now)//小于当前是见表示尚可请假
-                        {
-                            label_EndTime.InnerText = "已过请假时间！";
-                        }
-                        else
-                        {
-                            label_EndTime.InnerText = end_time_night.ToString("yyyy/MM/dd HH:mm");
-                        }
-                    }
-                    else
-                    {
-                        label_EndTime.InnerText = "未设置";
-                    }
-
-                    //晚点名时间
-                    if (nightInfo.BatchTime != null)
-                    {
-                        DateTime call_time = Convert.ToDateTime(nightInfo.BatchTime);
-                        label_CallTime.InnerText = call_time.ToString("yyyy/MM/dd HH:mm");
-                    }
-                    else
-                    {
-                        label_CallTime.InnerText = "未设置";
-                    }
-                }
-                else
-                {
-                    label_EndTime.InnerText = "获取数据失败！";
-                    label_CallTime.InnerText = "获取数据失败！";
-                }
-                #endregion
+                label_EndTime.InnerText = "获取数据失败！";
+                label_CallTime.InnerText = "获取数据失败！";
             }
             #endregion
 

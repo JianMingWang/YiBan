@@ -1,8 +1,8 @@
-﻿using System;
+﻿using qingjia_YiBan.HomePage.Class;
+using qingjia_YiBan.HomePage.Model.API;
+using System;
 using System.Web;
 using System.Web.UI.HtmlControls;
-using qingjia_YiBan.HomePage.Class;
-using qingjia_YiBan.HomePage.Model.API;
 
 namespace qingjia_YiBan.SubPage
 {

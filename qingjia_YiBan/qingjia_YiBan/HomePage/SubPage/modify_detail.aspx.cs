@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+﻿using qingjia_YiBan.HomePage.Class;
+using System;
 using System.Web.UI.HtmlControls;
-using qingjia_YiBan.HomePage.Class;
-using System.Data;
-using System.Data.SqlClient;
 
 namespace qingjia_YiBan.SubPage
 {

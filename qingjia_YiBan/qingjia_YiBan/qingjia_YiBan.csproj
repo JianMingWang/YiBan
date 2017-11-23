@@ -101,6 +101,7 @@
     <Content Include="HomePage\obj\Release\TransformWebConfig\assist\Web.config" />
     <Content Include="HomePage\obj\Release\TransformWebConfig\original\Web.config" />
     <Content Include="HomePage\obj\Release\TransformWebConfig\transformed\Web.config" />
+    <Content Include="HomePage\SubPage\LeavePrint.aspx" />
     <Content Include="HomePage\UserAuth.ashx" />
     <Content Include="HomePage\UserProcess.ashx" />
     <None Include="Properties\PublishProfiles\配置文件.pubxml" />
@@ -417,6 +418,13 @@
     </Compile>
     <Compile Include="HomePage\qingjia_WeChat.aspx.designer.cs">
       <DependentUpon>qingjia_WeChat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomePage\SubPage\LeavePrint.aspx.cs">
+      <DependentUpon>LeavePrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomePage\SubPage\LeavePrint.aspx.designer.cs">
+      <DependentUpon>LeavePrint.aspx</DependentUpon>
     </Compile>
     <Compile Include="HomePage\UserAuth.ashx.cs">
       <DependentUpon>UserAuth.ashx</DependentUpon>
